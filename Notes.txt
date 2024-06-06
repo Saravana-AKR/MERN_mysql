@@ -1,0 +1,9 @@
+
+
+Server package : 
+
+ #   npm i express cors mysql2 
+ #   npm i nodemon
+ #   npx sequelize-cli init
+ #   
+ #   
