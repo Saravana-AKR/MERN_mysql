@@ -31,7 +31,14 @@ function App() {
           <Route  path='/designation' element={<Designation/>}/>
           <Route  path='/shift' element={<Shift/>}/>
           <Route  path='/shiftRoaster' element={<ShiftRoaster/>}/>
-          <Route  path='/UserRights' element={<UserRights/>}/>
+          <Route  path='/userRights' element={<UserRights/>}/>
+          <Route  path='/enquiry-details' element={<UserRights/>}/>
+          <Route  path='/registration' element={<UserRights/>}/>
+          <Route  path='/manual-attendance' element={<UserRights/>}/>
+          <Route  path='/deductions' element={<UserRights/>}/>
+          <Route  path='/advance' element={<UserRights/>}/>
+          <Route  path='/registration' element={<UserRights/>}/>
+          <Route  path='/settlement' element={<UserRights/>}/>
           </Route>
      </Routes>
        

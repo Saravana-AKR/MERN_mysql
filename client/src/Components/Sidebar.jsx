@@ -55,7 +55,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to='/UserRights'>
+          <Link to='/userRights'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>User rights</span>
           </Link>
         </li>
