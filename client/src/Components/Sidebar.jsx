@@ -68,41 +68,39 @@ const Sidebar = () => {
       </a>
       <ul id="forms-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="#">
+          <Link to='/enquiry-details'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Enquiry Details</span>
-            
-
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/registration'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Registration</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/manual-attendance'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Manual Attendance</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/deductions'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Deductions</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/advance'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Advance</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/resignation'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Resignation</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="forms-validation.html">
+          <Link to='/settlement'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Settlement</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </li>

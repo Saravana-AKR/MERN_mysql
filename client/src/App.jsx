@@ -10,6 +10,13 @@ import Designation from './ComponentPages/Master/Designation';
 import Shift from './ComponentPages/Master/Shift';
 import ShiftRoaster from './ComponentPages/Master/ShiftRoaster';
 import UserRights from './ComponentPages/Master/UserRights';
+import EnquiryDetails from './ComponentPages/EmployeeDetails/EnquiryDetails';
+import Registration from './ComponentPages/EmployeeDetails/Registration';
+import ManualAttendance from './ComponentPages/EmployeeDetails/ManualAttendance';
+import Deductions from './ComponentPages/EmployeeDetails/Deductions';
+import Advance from './ComponentPages/EmployeeDetails/Advance';
+import Resignation from './ComponentPages/EmployeeDetails/Resignation';
+import Settlements from './ComponentPages/EmployeeDetails/Settlements';
 
 
 
@@ -32,13 +39,13 @@ function App() {
           <Route  path='/shift' element={<Shift/>}/>
           <Route  path='/shiftRoaster' element={<ShiftRoaster/>}/>
           <Route  path='/userRights' element={<UserRights/>}/>
-          <Route  path='/enquiry-details' element={<UserRights/>}/>
-          <Route  path='/registration' element={<UserRights/>}/>
-          <Route  path='/manual-attendance' element={<UserRights/>}/>
-          <Route  path='/deductions' element={<UserRights/>}/>
-          <Route  path='/advance' element={<UserRights/>}/>
-          <Route  path='/registration' element={<UserRights/>}/>
-          <Route  path='/settlement' element={<UserRights/>}/>
+          <Route  path='/enquiry-details' element={<EnquiryDetails/>}/>
+          <Route  path='/registration' element={<Registration/>}/>
+          <Route  path='/manual-attendance' element={<ManualAttendance/>}/>
+          <Route  path='/deductions' element={<Deductions/>}/>
+          <Route  path='/advance' element={<Advance/>}/>
+          <Route  path='/resignation' element={<Resignation/>}/>
+          <Route  path='/settlement' element={<Settlements/>}/>
           </Route>
      </Routes>
        
