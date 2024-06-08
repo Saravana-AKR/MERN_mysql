@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   return (
@@ -7,10 +8,10 @@ const Sidebar = () => {
   <aside id="sidebar" className="sidebar">
   <ul className="sidebar-nav" id="sidebar-nav">
     <li className="nav-item my-4">
-      <a className="nav-link " href="#">
+      <Link className="nav-link " to="/">
         <i className="bi bi-grid-fill" />
         <span>Dashboard</span>
-      </a>
+      </Link>
     </li>
     <li className="nav-item my-4">
       <a className="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -18,45 +19,45 @@ const Sidebar = () => {
       </a>
       <ul id="components-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="#" className='d-flex  align-items-center '>
+          <Link to='/user' className='d-flex  align-items-center '>
           {/* <i class="bi bi-caret-right-fill" style={{fontSize:"14px"}}/><span>User</span> */}
           <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>User</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/company'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Company</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/department'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Department</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/subDepartment'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Sub Department</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/designation'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Designation</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/shift'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Shift</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/shiftRoaster'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Shift Roaster</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to='/UserRights'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>User rights</span>
-          </a>
+          </Link>
         </li>
     
       </ul>

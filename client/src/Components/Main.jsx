@@ -1,4 +1,10 @@
 import React from 'react'
+import Dropdown from 'react-bootstrap/Dropdown';
+import PieChartHome from './Pie chart/PieChartHome';
+import BarChartHome from './Bar chart/BarChartHome';
+
+
+
 
 const Main = () => {
   return (
@@ -6,12 +12,9 @@ const Main = () => {
    <div>
   <main id="main" className="main">
     <div className="pagetitle">
-      <h1>Dashboard</h1>
+      <h1 className='py-2'>Dashboard</h1>
       <nav>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li className="breadcrumb-item active">Dashboard</li>
-        </ol>
+       
       </nav>
     </div>
     <section className="section dashboard">
@@ -20,22 +23,23 @@ const Main = () => {
           <div className="row">
             <div className="col-xxl-4 col-md-6">
               <div className="card info-card sales-card">
-                <div className="filter">
-                  <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots" /></a>
-                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li className="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-                    <li><a className="dropdown-item" href="#">Today</a></li>
-                    <li><a className="dropdown-item" href="#">This Month</a></li>
-                    <li><a className="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
+              <Dropdown className="filter">
+                  <Dropdown.Toggle className="icon" variant='white' id="dropdown-basic">
+                  <i className="bi bi-three-dots" />
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                  </Dropdown.Menu>
+             </Dropdown>
                 <div className="card-body">
                   <h5 className="card-title">Live <span>| Employees</span></h5>
                   <div className="d-flex align-items-center">
                     <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i className="bi bi-cart" />
+                      
+                      <i class="bi bi-person-lines-fill"/>
                     </div>
                     <div className="ps-3">
                       <h6>145</h6>
@@ -47,25 +51,26 @@ const Main = () => {
             </div>
             <div className="col-xxl-4 col-md-6">
               <div className="card info-card revenue-card">
-                <div className="filter">
-                  <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots" /></a>
-                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li className="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-                    <li><a className="dropdown-item" href="#">Today</a></li>
-                    <li><a className="dropdown-item" href="#">This Month</a></li>
-                    <li><a className="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
+              <Dropdown className="filter">
+                <Dropdown.Toggle className="icon" variant='white' id="dropdown-basic">
+                   <i className="bi bi-three-dots" />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
                 <div className="card-body">
-                  <h5 className="card-title">Revenue <span>| This Month</span></h5>
+                  <h5 className="card-title">Today Labour <span>| Strength</span></h5>
                   <div className="d-flex align-items-center">
                     <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i className="bi bi-currency-dollar" />
+                    
+                      <i class="bi bi-person-workspace"/>
                     </div>
                     <div className="ps-3">
-                      <h6>$3,264</h6>
+                      <h6>3,264</h6>
                       <span className="text-success small pt-1 fw-bold">8%</span> <span className="text-muted small pt-2 ps-1">increase</span>
                     </div>
                   </div>
@@ -74,19 +79,19 @@ const Main = () => {
             </div>
             <div className="col-xxl-4 col-xl-12">
               <div className="card info-card customers-card">
-                <div className="filter">
-                  <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots" /></a>
-                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li className="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-                    <li><a className="dropdown-item" href="#">Today</a></li>
-                    <li><a className="dropdown-item" href="#">This Month</a></li>
-                    <li><a className="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
+              <Dropdown className="filter">
+              <Dropdown.Toggle className="icon" variant='white' id="dropdown-basic">
+              <i className="bi bi-three-dots" />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+             </Dropdown>
                 <div className="card-body">
-                  <h5 className="card-title">Customers <span>| This Year</span></h5>
+                  <h5 className="card-title">Today Staff <span>| Strength</span></h5>
                   <div className="d-flex align-items-center">
                     <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i className="bi bi-people" />
@@ -99,83 +104,66 @@ const Main = () => {
                 </div>
               </div>
             </div>
+           
             <div className="col-12">
-              <div className="card">
-                <div className="filter">
-                  <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots" /></a>
-                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li className="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-                    <li><a className="dropdown-item" href="#">Today</a></li>
-                    <li><a className="dropdown-item" href="#">This Month</a></li>
-                    <li><a className="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
+              <div className="card pending-task overflow-auto">
+              <Dropdown className="filter">
+              <Dropdown.Toggle className="icon" variant='white' id="dropdown-basic">
+              <i className="bi bi-three-dots" />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+              </Dropdown>
                 <div className="card-body">
-                  <h5 className="card-title">Reports <span>/Today</span></h5>
-                </div>
-              </div>
-            </div>
-            <div className="col-12">
-              <div className="card recent-sales overflow-auto">
-                <div className="filter">
-                  <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots" /></a>
-                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li className="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-                    <li><a className="dropdown-item" href="#">Today</a></li>
-                    <li><a className="dropdown-item" href="#">This Month</a></li>
-                    <li><a className="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">Recent Sales <span>| Today</span></h5>
+                  <h5 className="card-title">Pending Task <span>| Today</span></h5>
                   <table className="table table-borderless datatable">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Customer</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Staff Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Department</th>
                         <th scope="col">Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row"><a href="#">#2457</a></th>
-                        <td>Brandon Jacob</td>
-                        <td><a href="#" className="text-primary">At praesentium minu</a></td>
-                        <td>$64</td>
+                        <td>Babu</td>
+                        <td><a href="#" className="text-primary">Get Order Approval</a></td>
+                        <td>Accounts</td>
                         <td><span className="badge bg-success">Approved</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2147</a></th>
-                        <td>Bridie Kessler</td>
-                        <td><a href="#" className="text-primary">Blanditiis dolor omnis similique</a></td>
-                        <td>$47</td>
+                        <td>Anwar</td>
+                        <td><a href="#" className="text-primary">Schedule Meeting</a></td>
+                        <td>Documentation</td>
                         <td><span className="badge bg-warning">Pending</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2049</a></th>
-                        <td>Ashleigh Langosh</td>
-                        <td><a href="#" className="text-primary">At recusandae consectetur</a></td>
-                        <td>$147</td>
+                        <td>Sheela</td>
+                        <td><a href="#" className="text-primary">Submit the order Report</a></td>
+                        <td>ERP</td>
                         <td><span className="badge bg-success">Approved</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2644</a></th>
-                        <td>Angus Grady</td>
-                        <td><a href="#" className="text-primar">Ut voluptatem id earum et</a></td>
-                        <td>$67</td>
+                        <td>Guna Sekar</td>
+                        <td><a href="#" className="text-primar">Schedule buyer Meeting</a></td>
+                        <td>Fabric</td>
                         <td><span className="badge bg-danger">Rejected</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2644</a></th>
-                        <td>Raheem Lehner</td>
-                        <td><a href="#" className="text-primary">Sunt similique distinctio</a></td>
-                        <td>$165</td>
+                        <td>Prabha</td>
+                        <td><a href="#" className="text-primary">Close Call  Client work</a></td>
+                        <td>Quality</td>
                         <td><span className="badge bg-success">Approved</span></td>
                       </tr>
                     </tbody>
@@ -183,87 +171,62 @@ const Main = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12">
+            <div className="col-xxl-6 col-sm-6">
               <div className="card top-selling overflow-auto">
-                <div className="filter">
-                  <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots" /></a>
-                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li className="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-                    <li><a className="dropdown-item" href="#">Today</a></li>
-                    <li><a className="dropdown-item" href="#">This Month</a></li>
-                    <li><a className="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
+              <Dropdown className="filter">
+                  <Dropdown.Toggle className="icon" variant='white' id="dropdown-basic">
+                  <i className="bi bi-three-dots" />
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                  </Dropdown.Menu>
+             </Dropdown>
                 <div className="card-body pb-0">
-                  <h5 className="card-title">Top Selling <span>| Today</span></h5>
-                  <table className="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">Preview</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Sold</th>
-                        <th scope="col">Revenue</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt /></a></th>
-                        <td><a href="#" className="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
-                        <td className="fw-bold">124</td>
-                        <td>$5,828</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt /></a></th>
-                        <td><a href="#" className="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
-                        <td className="fw-bold">98</td>
-                        <td>$4,508</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt /></a></th>
-                        <td><a href="#" className="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
-                        <td className="fw-bold">74</td>
-                        <td>$4,366</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt /></a></th>
-                        <td><a href="#" className="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
-                        <td className="fw-bold">63</td>
-                        <td>$2,016</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt /></a></th>
-                        <td><a href="#" className="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
-                        <td className="fw-bold">41</td>
-                        <td>$3,239</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <h5 className="card-title">Today Hostel <span>| Strength</span></h5> 
+                 
+                  <PieChartHome/>
+                </div>
+              </div>
+            </div>
+            <div className="col-xxl-6 col-sm-6">
+              <div className="card top-selling overflow-auto">
+              <Dropdown className="filter">
+                  <Dropdown.Toggle className="icon" variant='white' id="dropdown-basic">
+                  <i className="bi bi-three-dots" />
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                  </Dropdown.Menu>
+             </Dropdown>
+                <div className="card-body pb-0">
+                  <h5 className="card-title">Hostel Absent<span>| Details</span></h5> 
+                
+                  <BarChartHome/>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {/* ********************************** */}
         <div className="col-lg-4">
           <div className="card">
-            <div className="filter">
-              <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots" /></a>
-              <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li className="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-                <li><a className="dropdown-item" href="#">Today</a></li>
-                <li><a className="dropdown-item" href="#">This Month</a></li>
-                <li><a className="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
+            <Dropdown className="filter">
+              <Dropdown.Toggle className="icon" variant='white' id="dropdown-basic">
+              <i className="bi bi-three-dots" />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+           </Dropdown>
             <div className="card-body">
               <h5 className="card-title">Recent Activity <span>| Today</span></h5>
               <div className="activity">
@@ -313,77 +276,44 @@ const Main = () => {
             </div>
           </div>
           <div className="card">
-            <div className="filter">
-              <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots" /></a>
-              <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li className="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-                <li><a className="dropdown-item" href="#">Today</a></li>
-                <li><a className="dropdown-item" href="#">This Month</a></li>
-                <li><a className="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
-            <div className="card-body pb-0">
-              <h5 className="card-title">Budget Report <span>| This Month</span></h5>
-            </div>
-          </div>
-          <div className="card">
-            <div className="filter">
-              <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots" /></a>
-              <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li className="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-                <li><a className="dropdown-item" href="#">Today</a></li>
-                <li><a className="dropdown-item" href="#">This Month</a></li>
-                <li><a className="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
-            <div className="card-body pb-0">
-              <h5 className="card-title">Website Traffic <span>| Today</span></h5>
-            </div>
-          </div>/
-          /
-          <div className="card">
-            <div className="filter">
-              <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots" /></a>
-              <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li className="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-                <li><a className="dropdown-item" href="#">Today</a></li>
-                <li><a className="dropdown-item" href="#">This Month</a></li>
-                <li><a className="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
+          <Dropdown className="filter">
+                  <Dropdown.Toggle className="icon" variant='white' id="dropdown-basic">
+                  <i className="bi bi-three-dots" />
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                  </Dropdown.Menu>
+             </Dropdown>
             <div className="card-body pb-0">
               <h5 className="card-title">Company &amp; Lists <span>| Today</span></h5>
               <div className="news">
                 <div className="post-item clearfix">
                   <img src="img/news-1.jpg" alt />
-                  <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
+                  <h4><a href="#">Shanthi Garments</a></h4>
                   <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
                 </div>
                 <div className="post-item clearfix">
                   <img src="img/news-2.jpg" alt />
-                  <h4><a href="#">Quidem autem et impedit</a></h4>
-                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
+                  <h4><a href="#">Tirupur Collars</a></h4>
+                  <p>Illo nemo neqdries werona nande...</p>
                 </div>
                 <div className="post-item clearfix">
                   <img src="img/news-3.jpg" alt />
-                  <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
+                  <h4><a href="#">Annai Knittings</a></h4>
+                  <p>Fugiat voluptas vero eaque accusantium eos.  totam...</p>
                 </div>
                 <div className="post-item clearfix">
                   <img src="img/news-4.jpg" alt />
-                  <h4><a href="#">Laborum corporis quo dara net para</a></h4>
+                  <h4><a href="#">S M Compacting</a></h4>
                   <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
                 </div>
                 <div className="post-item clearfix">
                   <img src="img/news-5.jpg" alt />
-                  <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
+                  <h4><a href="#">A to Z Cotton Centre</a></h4>
+                  <p>Odit  Atque cupiditate libero beatae dignissimos eius...</p>
                 </div>
               </div>
             </div>
@@ -392,6 +322,7 @@ const Main = () => {
       </div>
     </section>
   </main>
+
 </div>
 
     </>

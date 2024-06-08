@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Dropdown from 'react-bootstrap/Dropdown';
+
 
 
 
@@ -21,8 +23,8 @@ const Header = () => {
   <header id="header" className="header fixed-top d-flex align-items-center">
   <div className="d-flex align-items-center justify-content-between">
     <a href="index.html" className="logo d-flex align-items-center">
-      <img src="img/logo-small.png" alt />
-      <span className="px-3 d-none d-lg-block">AKR </span>
+      <img src="img/brand-logo.png" alt />
+      <span className="px-3 d-none d-lg-block"></span>
     </a>
     <i className="bi bi-list toggle-sidebar-btn"  style={{ color: '#1990CC' }} 
         onClick={toggleSidebar} />
@@ -32,11 +34,12 @@ const Header = () => {
   <nav className="header-nav ms-auto">
     <ul className="d-flex align-items-center">
       
-      <li className="nav-item dropdown pe-3">
+      {/* <li className="nav-item dropdown pe-3">
         <a className="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           <img src="img/profile-img.jpg" alt="Profile" className="rounded-circle" />
           <span className="d-none d-md-block dropdown-toggle ps-2">Admin</span>
         </a>
+        
         <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li className="dropdown-header">
             <h6>Kevin Anderson</h6>
@@ -79,7 +82,20 @@ const Header = () => {
             </a>
           </li>
         </ul>
-      </li>
+      </li> */}
+           <Dropdown className="nav-item dropdown pe-3">
+                  <Dropdown.Toggle className="nav-link nav-profile d-flex align-items-center pe-0" variant='white' id="dropdown-basic">
+                  <img src="img/profile-img.jpg" alt="Profile" className="rounded-circle" />
+                  <span className="d-none d-md-block  ps-2">Admin</span>
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+                  
+                      <Dropdown.Item href="#/action-2">Logout </Dropdown.Item>
+                     
+                  </Dropdown.Menu>
+             </Dropdown>
     </ul>
   </nav>
 </header>
