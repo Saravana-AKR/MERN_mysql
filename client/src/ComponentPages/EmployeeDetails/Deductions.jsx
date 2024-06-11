@@ -8,11 +8,11 @@ const Deductions = () => {
     <main id="main" class="main" style={{height:"80vh"}}>
 
 <div class="pagetitle">
-  <h1>UserRights</h1>
+  <h1>Deductions</h1>
   <nav>
     <ol class="breadcrumb py-3">
       <li class="breadcrumb-item"><Link to='/'>Home</Link></li>
-      <li class="breadcrumb-item active">User-Rights</li>
+      <li class="breadcrumb-item active">Deductions</li>
     </ol>
   </nav>
 </div>
@@ -23,7 +23,7 @@ const Deductions = () => {
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">User Rights</h5>
+              <h5 class="card-title">Deductions</h5>
 
         
             

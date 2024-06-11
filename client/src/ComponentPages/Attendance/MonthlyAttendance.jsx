@@ -1,17 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Advance = () => {
+const MonthlyAttendance = () => {
   return (
     <>
          <main id="main" class="main" style={{height:"80vh"}}>
 
 <div class="pagetitle">
-  <h1>Advance</h1>
+  <h1>MonthlyAttendance</h1>
   <nav>
     <ol class="breadcrumb py-3">
       <li class="breadcrumb-item"><Link to='/'>Home</Link></li>
-      <li class="breadcrumb-item active">Advance</li>
+      <li class="breadcrumb-item active">Monthly Attendance</li>
     </ol>
   </nav>
 </div>
@@ -22,7 +22,7 @@ const Advance = () => {
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Advance</h5>
+              <h5 class="card-title">Monthly Attendance</h5>
 
         
             
@@ -39,8 +39,8 @@ const Advance = () => {
 
     </main>
     
-     </>
+    </>
   )
 }
 
-export default Advance
+export default MonthlyAttendance

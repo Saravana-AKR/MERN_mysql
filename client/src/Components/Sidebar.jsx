@@ -110,19 +110,19 @@ const Sidebar = () => {
       </a>
       <ul id="tables-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="tables-general.html">
+          <Link to="/daily-attendance">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Daily Attendance</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="tables-data.html">
+          <Link to="/weekly-attendance">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Weekly Attendance</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="tables-data.html">
+          <Link to="/monthly-attendance">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Monthly Attendance</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </li>
@@ -132,14 +132,14 @@ const Sidebar = () => {
       </a>
       <ul id="charts-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="charts-chartjs.html">
+          <Link to="/salary-details">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Salary Details</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="charts-apexcharts.html">
+          <Link to="/bonus">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Bonus Details</span>
-          </a>
+          </Link>
         </li>
       
       </ul>
@@ -150,9 +150,9 @@ const Sidebar = () => {
       </a>
       <ul id="icons-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="icons-bootstrap.html">
+          <Link to="/report">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Reports</span>
-          </a>
+          </Link>
         </li>
        
       </ul>

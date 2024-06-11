@@ -1,17 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Advance = () => {
+const Reports = () => {
   return (
-    <>
-         <main id="main" class="main" style={{height:"80vh"}}>
+    <>  
+     
+     <main id="main" class="main" style={{height:"80vh"}}>
 
 <div class="pagetitle">
-  <h1>Advance</h1>
+  <h1>Reports</h1>
   <nav>
     <ol class="breadcrumb py-3">
       <li class="breadcrumb-item"><Link to='/'>Home</Link></li>
-      <li class="breadcrumb-item active">Advance</li>
+      <li class="breadcrumb-item active">Reports</li>
     </ol>
   </nav>
 </div>
@@ -22,7 +23,7 @@ const Advance = () => {
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Advance</h5>
+              <h5 class="card-title">Reports</h5>
 
         
             
@@ -38,9 +39,9 @@ const Advance = () => {
     </section>
 
     </main>
-    
-     </>
+
+    </>
   )
 }
 
-export default Advance
+export default Reports
