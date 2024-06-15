@@ -1264,5 +1264,12 @@ h6 {
              .td-align{
               text-align: center;
               vertical-align: middle;
+              
              }
-            
+             
+             .active-page{
+              color: #ffffff !important;
+              background-color: rgb(73, 158, 255) !important;
+
+              
+             }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
-import CreateEmployee from './CreateEmployee';
+
 
 
 
@@ -136,7 +136,7 @@ const Registration = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [sortConfig, setSortConfig] = useState({ key: 'FirstName', direction: 'ascending' });
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 10;
+    const itemsPerPage = 5;
 
     const handleSearch = (event) => {
       setSearchTerm(event.target.value);
@@ -199,7 +199,7 @@ const Registration = () => {
             <a className='grid-view btn btn-link active mx-2' href="#"> <i className="bi bi-grid-3x3-gap-fill"></i></a>
             <a className='grid-view btn btn-link active mx-2' href="#"> <i className="bi bi-justify fs-5"></i></a>
         
-            <Link className='btn btn-primary' to=''> <i className="bi bi-person-plus-fill pe-2" ></i>Add Employee</Link>
+            <Link className='btn btn-primary' to='/create-employee'> <i className="bi bi-person-plus-fill pe-2" ></i>Add Employee</Link>
           
         </div>
       
@@ -226,12 +226,12 @@ const Registration = () => {
                         <th scope="col" rowSpan="2" className='text-center' onClick={() => handleSort('FirstName')}> FirstName</th>
                         <th scope="col" className='text-center' onClick={() => handleSort('Employee ID')} >Employee ID</th>
                         <th scope="col" onClick={() => handleSort('AadharNumber')}>AadharNumber</th>
-                        <th scope="col" className='d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('ParentsName')}>ParentsName</th>
-                        <th scope="col" className='d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('BirthDay')}>BirthDay</th>
-                        <th scope="col" className='d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('Gender')}>Gender</th>
-                        <th scope="col" className='d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('Marital_Status')}>Marital Status</th>
-                        <th scope="col" className='d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('Email')}>Email</th>
-                        <th scope="col">Phone</th>
+                        <th scope="col" className=' text-center d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('ParentsName')}>ParentsName</th>
+                        <th scope="col" className=' text-center d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('BirthDay')}>BirthDay</th>
+                        <th scope="col" className=' text-center d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('Gender')}>Gender</th>
+                        <th scope="col" className=' text-center d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('Marital_Status')}>Marital Status</th>
+                        <th scope="col" className=' text-center d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('Email')}>Email</th>
+                        <th scope="col" className='text-center'>Phone</th>
                         <th scope="col">Action</th>
                    </tr>
                  </thead>
@@ -288,7 +288,41 @@ const Registration = () => {
        
 
       </div>
+
+      <div className="row">
+      <div className="mb-4">
+        <div className="d-flex justify-content-end my-1">
+          Showing {currentPage} to {Math.min(currentPage * itemsPerPage, filteredData.length)} of {filteredData.length} entries
+        </div>
+        <div className="d-flex justify-content-end gap-2">
+          <button onClick={() => setCurrentPage(1)} disabled={currentPage === 1} className='btn btn-primary'>
+            First
+          </button>
+          <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1} className='btn btn-primary'>
+            Previous
+          </button>
+          {[...Array(pageCount).keys()].map((page) => (
+            <button
+              key={page}
+              onClick={() => setCurrentPage(page + 1)}
+              className={currentPage === page + 1 ? 'active active-page' : ''}
+              style={{backgroundColor:"rgb(202, 202, 202)",color:"white",border:"none",fontSize:"1.2rem",padding:"0.2rem 0.5rem",borderRadius:"0.5rem"}}
+            >
+              {page + 1}
+            </button>
+          ))}
+          <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === pageCount} className='btn btn-primary'>
+            Next
+          </button>
+          <button onClick={() => setCurrentPage(pageCount)} disabled={currentPage === pageCount} className='btn btn-primary'>
+            Last
+          </button>
+        </div>
+      </div>
+      </div>
     </section>
+      
+   
 
     </main>
     

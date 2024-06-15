@@ -1,7 +1,7 @@
 import './App.css'
 import { Routes,Route } from "react-router-dom";
 import { Suspense, lazy } from 'react';
-// const CreateEmployee = lazy(()=> import('./ComponentPages/EmployeeDetails/Registration/CreateEmployee'))
+const CreateEmployee = lazy(()=> import('./ComponentPages/EmployeeDetails/Registration/CreateEmployee'))
 const Reports = lazy(()=> import ('./ComponentPages/Reports/Reports')) 
 const Bonus = lazy(()=> import ('./ComponentPages/Salary/Bonus')) 
 const MonthlySalary = lazy(()=> import ('./ComponentPages/Salary/MonthlySalary')) 
@@ -51,8 +51,7 @@ function App() {
           <Route  path='/userRights' element={<Suspense fallback={<></>}> <UserRights/> </Suspense>}/>
           <Route  path='/enquiry-details' element={<Suspense fallback={<></>}> <EnquiryDetails/> </Suspense>}/>
           <Route  path='/registration' element={<Suspense fallback={<></>}> <Registration/> </Suspense>}/>
-          {/* <Route  path='create-employee' element={<Suspense fallback={<></>}> <CreateEmployee/> </Suspense>}/> */}
-          
+          <Route  path='/create-employee' element={<Suspense fallback={<></>}> <CreateEmployee/> </Suspense>}/>
           <Route  path='/manual-attendance' element={<Suspense fallback={<></>}> <ManualAttendance/> </Suspense>}/>
           <Route  path='/deductions' element={<Suspense fallback={<></>}> <Deductions/> </Suspense>}/>
           <Route  path='/advance' element={<Suspense fallback={<></>}> <Advance/> </Suspense>}/>
@@ -64,6 +63,7 @@ function App() {
           <Route path='/salary-details' element={<Suspense fallback={<></>}> <MonthlySalary/></Suspense>}/>
           <Route  path='/bonus' element={<Suspense fallback={<></>}> <Bonus/> </Suspense>}/>
           <Route  path='/report' element={<Suspense fallback={<></>}> <Reports/> </Suspense>}/>
+          <Route  path='*' element={<Suspense fallback={<> Page Not Found </>}>  </Suspense>}/>
           </Route>
      </Routes>
        

@@ -3,7 +3,18 @@ import React from 'react'
 const CreateEmployee = () => {
   return (
     <>
-          <div class="modal fade" id="modalDialogScrollable" tabindex="-1" aria-hidden="true">
+               <main id="main" className="main" style={{height:"85vh"}}>
+
+               </main>
+      
+    </>
+  )
+}
+
+export default CreateEmployee
+
+
+{/* <div class="modal fade" id="modalDialogScrollable" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                   <div class="modal-content bg-info-subtle text-dark">
                     <div class="modal-header">
@@ -44,10 +55,4 @@ const CreateEmployee = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-      
-    </>
-  )
-}
-
-export default CreateEmployee
+              </div> */}
