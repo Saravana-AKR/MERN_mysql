@@ -1,10 +1,10 @@
-const  amount= 9 ;
+const express =  require('express')
+const port = 8000;
 
-if (amount<10) {
-    console.log("small number");;
+const app = express()
 
-}else{
-    console.log('large number');
-}
+app.listen(port,()=>{
+    console.log(`server running on port ${port}`)
+});
 
-console.log(`this is first node app !!`);
+

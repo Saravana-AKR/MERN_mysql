@@ -85,7 +85,7 @@ const Header = () => {
       </li> */}
            <Dropdown className="nav-item dropdown pe-3">
                   <Dropdown.Toggle className="nav-link nav-profile d-flex align-items-center pe-0" variant='white' id="dropdown-basic">
-                  <img src="img/profile-img.jpg" alt="Profile" className="rounded-circle" />
+                  <img src="img/profile-img/profile-img.jpg" alt="Profile" className="rounded-circle" />
                   <span className="d-none d-md-block  ps-2">Admin</span>
                   </Dropdown.Toggle>
 

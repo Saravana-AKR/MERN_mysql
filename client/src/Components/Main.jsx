@@ -39,7 +39,7 @@ const Main = () => {
                   <div className="d-flex align-items-center">
                     <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       
-                      <i class="bi bi-person-lines-fill"/>
+                      <i className="bi bi-person-lines-fill"/>
                     </div>
                     <div className="ps-3">
                       <h6>145</h6>
@@ -67,7 +67,7 @@ const Main = () => {
                   <div className="d-flex align-items-center">
                     <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
                     
-                      <i class="bi bi-person-workspace"/>
+                      <i className="bi bi-person-workspace"/>
                     </div>
                     <div className="ps-3">
                       <h6>3,264</h6>

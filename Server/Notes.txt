@@ -1,0 +1,8 @@
+
+
+npm install cors
+npm install nodemon
+npm i sequelize 
+npm install --save-dev sequelize-cli 
+npm install -g sequelize-cli
+npx sequelize init

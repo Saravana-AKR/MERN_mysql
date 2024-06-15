@@ -1,6 +1,7 @@
 import './App.css'
 import { Routes,Route } from "react-router-dom";
 import { Suspense, lazy } from 'react';
+// const CreateEmployee = lazy(()=> import('./ComponentPages/EmployeeDetails/Registration/CreateEmployee'))
 const Reports = lazy(()=> import ('./ComponentPages/Reports/Reports')) 
 const Bonus = lazy(()=> import ('./ComponentPages/Salary/Bonus')) 
 const MonthlySalary = lazy(()=> import ('./ComponentPages/Salary/MonthlySalary')) 
@@ -18,7 +19,7 @@ const Shift = lazy(()=> import ('./ComponentPages/Master/Shift'))
 const ShiftRoaster = lazy(()=> import ('./ComponentPages/Master/ShiftRoaster')) 
 const UserRights = lazy(()=> import ('./ComponentPages/Master/UserRights')) 
 const EnquiryDetails = lazy(()=> import ('./ComponentPages/EmployeeDetails/EnquiryDetails')) 
-const Registration = lazy(()=> import ('./ComponentPages/EmployeeDetails/Registration')) 
+const Registration = lazy(()=> import ('./ComponentPages/EmployeeDetails/Registration/Registration')) 
 const ManualAttendance = lazy(()=> import ('./ComponentPages/EmployeeDetails/ManualAttendance')) 
 const Deductions = lazy(()=> import ('./ComponentPages/EmployeeDetails/Deductions')) 
 const Advance = lazy(()=> import ('./ComponentPages/EmployeeDetails/Advance')) 
@@ -50,6 +51,8 @@ function App() {
           <Route  path='/userRights' element={<Suspense fallback={<></>}> <UserRights/> </Suspense>}/>
           <Route  path='/enquiry-details' element={<Suspense fallback={<></>}> <EnquiryDetails/> </Suspense>}/>
           <Route  path='/registration' element={<Suspense fallback={<></>}> <Registration/> </Suspense>}/>
+          {/* <Route  path='create-employee' element={<Suspense fallback={<></>}> <CreateEmployee/> </Suspense>}/> */}
+          
           <Route  path='/manual-attendance' element={<Suspense fallback={<></>}> <ManualAttendance/> </Suspense>}/>
           <Route  path='/deductions' element={<Suspense fallback={<></>}> <Deductions/> </Suspense>}/>
           <Route  path='/advance' element={<Suspense fallback={<></>}> <Advance/> </Suspense>}/>
