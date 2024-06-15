@@ -180,7 +180,7 @@ const Registration = () => {
   return (
     <>
     
-    <main id="main" className="main" style={{height:"80vh"}}>
+    <main id="main" className="main" style={{height:"85vh"}}>
 
     <div className="pagetitle">
       <h1>Registration</h1>

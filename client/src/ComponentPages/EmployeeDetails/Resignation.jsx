@@ -5,7 +5,7 @@ const Resignation = () => {
   return (
     <>
     
-    <main id="main" class="main" style={{height:"80vh"}}>
+    <main id="main" class="main" style={{height:"85vh"}}>
 
 <div class="pagetitle">
   <h1>Resignation</h1>

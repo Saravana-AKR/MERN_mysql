@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const User = () => {
   return (
     <>
-      <main id="main" class="main" style={{height:"80vh"}}>
+      <main id="main" class="main" style={{height:"85vh"}}>
 
           <div class="pagetitle">
             <h1>Users</h1>
@@ -25,15 +25,15 @@ const User = () => {
                         <h5 class="card-title">Admin</h5>
 
                         <ul class="nav nav-tabs nav-tabs-bordered px-5 ms-5" id="borderedTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home" aria-selected="true">Admin</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bordered-profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Super User</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#bordered-contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Manager</button>
-                </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home" aria-selected="true">Admin</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bordered-profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Super User</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#bordered-contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Manager</button>
+                          </li>
                         </ul>
                           <div class="tab-content pt-2" id="borderedTabContent">
                             <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
