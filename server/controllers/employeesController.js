@@ -64,6 +64,11 @@ import { nanoid } from 'nanoid';
 //     res.status(200).json({message:`employee id ${id} deleted`});
 // }
 
+
+
+
+
+
 // Create Registration
 export const createRegistration = async(req,res)=>{
     const {userName,email,password}  = req.body
