@@ -16,6 +16,8 @@ if (process.env.NODE_ENV === 'development') {
   const port = process.env.PORT || 5100;
   
   import employeeRouter from './routers/EmployeeRouter.js';
+  import authRouter   from  './routers/authRouter.js'
+
 
 //   app.use('/api/crm/employees',employeeRouter);
 // app.use('/api/crm/employees',employeeRouter);
@@ -50,6 +52,7 @@ app.use((err, req, res, next) => {
 
 
 app.use('/',employeeRouter);
+app.use('/',authRouter);
 
 
 

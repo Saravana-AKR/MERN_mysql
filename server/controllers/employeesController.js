@@ -2,67 +2,69 @@ import connection from '../config/db.js';
 import { nanoid } from 'nanoid';
 
 
-// let employees = [
-//     {id: nanoid(), name: 'John', age:26, email:'john@gmail.com'},
-//     {id: nanoid(), name: 'morris', age:28, email:'morris@gmail.com'},
-//     {id: nanoid(), name: 'Annie', age:20, email:'annie@gmail.com'},
-//     {id: nanoid(), name: 'Peter', age:30, email:'peter@gmail.com'},
-//     {id: nanoid(), name: 'James', age:29, email:'jamesh@gmail.com'},
-// ];
+
+/*
+let employees = [
+    {id: nanoid(), name: 'John', age:26, email:'john@gmail.com'},
+    {id: nanoid(), name: 'morris', age:28, email:'morris@gmail.com'},
+    {id: nanoid(), name: 'Annie', age:20, email:'annie@gmail.com'},
+    {id: nanoid(), name: 'Peter', age:30, email:'peter@gmail.com'},
+    {id: nanoid(), name: 'James', age:29, email:'jamesh@gmail.com'},
+];
 
 
 
-// export const getAllEmployees = async(req,res)=>{  
-//     res.status(200).json({message:' Data received', employees});
-// };
+export const getAllEmployees = async(req,res)=>{  
+    res.status(200).json({message:' Data received', employees});
+};
 
-// export const createEmployee = async(req,res)=>{
-//     const {name,age,email} = req.body;
-//     if (!name || !age || !email) {
-//         return res.status(400).json({message:'please provide the field given'});
-//     }
+export const createEmployee = async(req,res)=>{
+    const {name,age,email} = req.body;
+    if (!name || !age || !email) {
+        return res.status(400).json({message:'please provide the field given'});
+    }
 
-//     const id = nanoid(10);
-//     const employee = {id,name,age,email};
-//     employees.push(employee);
-//     res.status(200).json({employee});
-// }
+    const id = nanoid(10);
+    const employee = {id,name,age,email};
+    employees.push(employee);
+    res.status(200).json({employee});
+}
 
-// export const getEmployee = async(req,res)=>{
-//     const {id} = req.params;
-//     const employee = employees.find((employee)=>employee.id === id);
-//     if (!employee) {
-//       return res.status(404).json({message:`no employee id found  ${id}`});
-//     }
-//     res.status(200).json({employee});
-// }
+export const getEmployee = async(req,res)=>{
+    const {id} = req.params;
+    const employee = employees.find((employee)=>employee.id === id);
+    if (!employee) {
+      return res.status(404).json({message:`no employee id found  ${id}`});
+    }
+    res.status(200).json({employee});
+}
 
-// export const updateEmployee = async(req,res)=>{
-//     const {name,age,email} = req.body;
-//      if (!name || !age || !email) {
-//           return res.status(404).json({message:`please provide the field`});
-//      }
+export const updateEmployee = async(req,res)=>{
+    const {name,age,email} = req.body;
+     if (!name || !age || !email) {
+          return res.status(404).json({message:`please provide the field`});
+     }
       
-//      const {id} = req.params;
-//       const employee = employees.find((employee)=>employee.id === id);
-//       if (!employee) {
-//           return res.status(404).json({message:`no employee id found  ${id}`});
-//       }
-//       employee.name = name;
-//       employee.age = age;
-//       employee.email = email;
-//       res.status(200).json({employee});   
-//   }
+     const {id} = req.params;
+      const employee = employees.find((employee)=>employee.id === id);
+      if (!employee) {
+          return res.status(404).json({message:`no employee id found  ${id}`});
+      }
+      employee.name = name;
+      employee.age = age;
+      employee.email = email;
+      res.status(200).json({employee});   
+  }
 
-// export const deleteEmployee =  async(req,res)=>{
-//     const {id} = req.params;
-//     const employee = employees.find((employee)=>employee.id === id);
-//     if (!employee) {
-//       return res.status(404).json({message:`no employee id found  ${id}`});
-//     }
-//     employees = employees.filter((employee)=>employee.id!== id);
-//     res.status(200).json({message:`employee id ${id} deleted`});
-// }
+export const deleteEmployee =  async(req,res)=>{
+    const {id} = req.params;
+    const employee = employees.find((employee)=>employee.id === id);
+    if (!employee) {
+      return res.status(404).json({message:`no employee id found  ${id}`});
+    }
+    employees = employees.filter((employee)=>employee.id!== id);
+    res.status(200).json({message:`employee id ${id} deleted`});
+} */
 
 
 
@@ -143,3 +145,4 @@ export const deleteRegistration = async(req,res)=>{
     res.status(500).json({ error: 'Failed to delete user' });
   }
 }
+

@@ -10,6 +10,7 @@
    4. npm i cors
    5. npm i morgan@1.10.0
    6. npm install nanoid@^3.0.0
+   7. npm i express-validator@7.0.1
 
 
 
