@@ -3,6 +3,8 @@ import express from 'express';
 const app = express();
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
+app.use(cookieParser());
 dotenv.config();
 
 app.use(express.json());

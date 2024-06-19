@@ -1,6 +1,9 @@
 
 import { body, validationResult } from 'express-validator';
-// import { BadRequestError } from '../errors/customErrors';
+
+
+
+
 const withValidationErrors = (validateValues) => {
   return [
     validateValues,
@@ -23,3 +26,28 @@ export const validateTest = withValidationErrors([
     .withMessage('name must be between 3 and 50 characters long')
     .trim(),
 ]);
+
+
+
+export const validateRegisterInput = [
+    body('name').notEmpty().withMessage('name is required'),
+    body('email')
+      .notEmpty()
+      .withMessage('email is required')
+      .isEmail()
+      .withMessage('invalid email format')
+      .custom(async (email) => {
+        const query = 'SELECT * FROM users WHERE email = ?';
+        const [rows] = await connection.query(query, [email]);
+        if (rows.length > 0) {
+          throw new Error('email already exists !');
+        }
+      }),
+    body('password')
+      .notEmpty()
+      .withMessage('password is required')
+      .isLength({ min: 8 })
+      .withMessage('password must be at least 8 characters long'),
+    body('location').notEmpty().withMessage('location is required'),
+    body('lastName').notEmpty().withMessage('last name is required'),
+  ];

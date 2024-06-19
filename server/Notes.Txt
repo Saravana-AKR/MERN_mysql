@@ -11,6 +11,8 @@
    5. npm i morgan@1.10.0
    6. npm install nanoid@^3.0.0
    7. npm i express-validator@7.0.1
+   8. npm i cookie-parser@1.4.6
+
 
 
 
@@ -22,3 +24,11 @@
    DB_PASSWORD=admin123
    DB_NAME=crmdatabase
    DB_PORT=3306
+   JWT_SECRET= secret
+   JWT_EXPIRES_IN=30d
+
+
+
+   Query : - 
+
+     delete from crmdatabase.register where id=2;
