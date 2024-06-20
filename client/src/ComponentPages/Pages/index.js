@@ -16,6 +16,8 @@
  export {default as Settlement} from '../../ComponentPages/EmployeeDetails/Settlement';
  export {default as Resignation} from '../../ComponentPages/EmployeeDetails/Resignation';
  export {default as ManualAttendance} from '../../ComponentPages/EmployeeDetails/ManualAttendance';
+ export {default as Advance} from '../EmployeeDetails/Advance';
+ export {default as Registration} from '../EmployeeDetails/Registration/Registration';
  export {default as EnquiryDetails} from '../../ComponentPages/EmployeeDetails/EnquiryDetails';
  export {default as Deductions} from '../../ComponentPages/EmployeeDetails/Deductions';
  export {default as DailyAttendance} from '../../ComponentPages/Attendance/DailyAttendance';

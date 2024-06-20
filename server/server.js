@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === 'development') {
   
   import employeeRouter from './routers/EmployeeRouter.js';
   import authRouter   from  './routers/authRouter.js'
+  import  companyUnitRouter from  './routers/companyUnitRouter.js'
 
 
 //   app.use('/api/crm/employees',employeeRouter);
@@ -42,6 +43,10 @@ app.post('/',(req,res)=>{
    res.json({message:' Data received', data:req.body});
 });
 
+app.get('/api/crm/test', (req, res) => {
+  res.json({ msg: 'test route' });
+});
+
 
 //  app.use('*', (req, res) => {
 //   res.status(404).json({ msg: 'Route not found' });
@@ -55,6 +60,7 @@ app.use((err, req, res, next) => {
 
 app.use('/',employeeRouter);
 app.use('/',authRouter);
+app.use('/',companyUnitRouter);
 
 
 

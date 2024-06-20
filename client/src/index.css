@@ -1273,3 +1273,27 @@ h6 {
 
               
              }
+
+             /* **************************************************** */
+
+
+             /* Register page css  */
+
+             @media (max-width:320px) {
+              .akr-symbol{
+                   display: block !important; 
+                   color: #18d26e; 
+              }
+             }
+              
+             @media (max-width:480px) {
+              .akr-symbol{
+                   display: block !important; 
+                   color: #18d26e; 
+              }
+             }
+             
+
+
+
+            

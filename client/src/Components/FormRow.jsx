@@ -1,23 +1,26 @@
-import React from 'react'
+import React from 'react';
 
-const FormRow = ({type,name,labelText,defaultValue=''}) => {
-  return (
-    <>
-        <div className='form-row'>
-      <label htmlFor={name} className='form-label'>
-        {labelText || name}
-      </label>
-      <input
-        type={type}
-        id={name}
-        name={name}
-        className='form-input'
-        defaultValue={defaultValue}
-        required
-      />
-    </div>
-    </>
-  )
-}
+const FormRow = ({ type, name, labelText, defaultValue = '' }) => {
+	return (
+		<>
+		
+				<label
+					htmlFor={name}
+					className='form-label'
+				>
+					{labelText || name}
+				</label>
+				<input
+					type={type}
+					id={name}
+					name={name}
+					className='form-control'
+					defaultValue={defaultValue}
+					required
+				/>
+			
+		</>
+	);
+};
 
-export default FormRow
+export default FormRow;

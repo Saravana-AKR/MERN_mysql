@@ -5,16 +5,12 @@ import { createJWT } from '../utils/tokenUtils.js';
 
 
 
-        
-        
-
-
 // Create Admin or User
 export const register = async (req, res) => {
     const { name, email, password, role  } = req.body; // role default to 'user' if not provided
 
      // Check if all required fields are provided
-    if (!name || !email || !password || !role) {
+    if (!name || !email || !password) {
         return  res.status(400).json({ error: 'Some Field has empty ...' });
       }
 
@@ -33,7 +29,7 @@ export const register = async (req, res) => {
     // Create JWT token
     const token = createJWT({ userId, role });
     console.log(token);
-
+       
     
 
       res.status(200).json({ message: 'User registered successfully', response });
@@ -73,7 +69,16 @@ export const loginUser = async (req, res) => {
       if (rows.length > 0) {
         const user = rows[0];
         const isPasswordValid = await comparePassword(password, user.password);
+          
+        // const oneDay = 1000 * 60 * 60 * 24;
+
+        // res.cookie('token', token, {
+        //   httpOnly: true,
+        //   expires: new Date(Date.now() + oneDay),
+        //   secure: process.env.NODE_ENV === 'production',
+        // });
         
+
         if (isPasswordValid) {
           res.status(200).json({ message: 'Login successful', user });
         } else {
@@ -86,4 +91,15 @@ export const loginUser = async (req, res) => {
       console.log(error);
       res.status(500).json({ error: 'Failed to login user' });
     }
+  };
+
+
+  //  Logout
+
+  export const logout = (req, res) => {
+    res.cookie('token', 'logout', {
+      httpOnly: true,
+      expires: new Date(Date.now()),
+    });
+    res.status(StatusCodes.OK).json({ msg: 'user logged out!' });
   };

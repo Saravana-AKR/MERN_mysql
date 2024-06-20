@@ -5,7 +5,8 @@ const router = express.Router();
 import {
     register,
     loginUser,
-    getAllRegister
+    getAllRegister,
+    logout
 } from '../controllers/authController.js'
 
 import {validateRegisterInput} from '../middleware/validationMiddleware.js'
@@ -14,5 +15,6 @@ import {validateRegisterInput} from '../middleware/validationMiddleware.js'
 router.post('/api/crm/register',validateRegisterInput,register);
 router.post('/api/crm/login',loginUser);
 router.get('/api/crm/register',getAllRegister);
+router.get('/logout',logout);
 
 export default router;
