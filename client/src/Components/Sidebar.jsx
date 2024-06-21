@@ -19,43 +19,43 @@ const Sidebar = () => {
       </a>
       <ul id="components-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <Link to='/user' className='d-flex  align-items-center '>
+          <Link to='user' className='d-flex  align-items-center '>
           {/* <i class="bi bi-caret-right-fill" style={{fontSize:"14px"}}/><span>User</span> */}
           <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>User</span>
           </Link>
         </li>
         <li>
-          <Link to='/company'>
+          <Link to='company'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Company</span>
           </Link>
         </li>
         <li>
-          <Link to='/department'>
+          <Link to='department'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Department</span>
           </Link>
         </li>
         <li>
-          <Link to='/subDepartment'>
+          <Link to='subDepartment'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Sub Department</span>
           </Link>
         </li>
         <li>
-          <Link to='/designation'>
+          <Link to='designation'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Designation</span>
           </Link>
         </li>
         <li>
-          <Link to='/shift'>
+          <Link to='shift'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Shift</span>
           </Link>
         </li>
         <li>
-          <Link to='/shiftRoaster'>
+          <Link to='shiftRoaster'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Shift Roaster</span>
           </Link>
         </li>
         <li>
-          <Link to='/userRights'>
+          <Link to='userRights'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>User rights</span>
           </Link>
         </li>
@@ -68,37 +68,37 @@ const Sidebar = () => {
       </a>
       <ul id="forms-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <Link to='/enquiry-details'>
+          <Link to='enquiry-details'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Enquiry Details</span>
           </Link>
         </li>
         <li>
-          <Link to='/registration'>
+          <Link to='registration'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Registration</span>
           </Link>
         </li>
         <li>
-          <Link to='/manual-attendance'>
+          <Link to='manual-attendance'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Manual Attendance</span>
           </Link>
         </li>
         <li>
-          <Link to='/deductions'>
+          <Link to='deductions'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Deductions</span>
           </Link>
         </li>
         <li>
-          <Link to='/advance'>
+          <Link to='advance'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Advance</span>
           </Link>
         </li>
         <li>
-          <Link to='/resignation'>
+          <Link to='resignation'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Resignation</span>
           </Link>
         </li>
         <li>
-          <Link to='/settlement'>
+          <Link to='settlement'>
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Settlement</span>
           </Link>
         </li>
@@ -110,17 +110,17 @@ const Sidebar = () => {
       </a>
       <ul id="tables-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <Link to="/daily-attendance">
+          <Link to="daily-attendance">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Daily Attendance</span>
           </Link>
         </li>
         <li>
-          <Link to="/weekly-attendance">
+          <Link to="weekly-attendance">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Weekly Attendance</span>
           </Link>
         </li>
         <li>
-          <Link to="/monthly-attendance">
+          <Link to="monthly-attendance">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Monthly Attendance</span>
           </Link>
         </li>
@@ -132,12 +132,12 @@ const Sidebar = () => {
       </a>
       <ul id="charts-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <Link to="/salary-details">
+          <Link to="salary-details">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Salary Details</span>
           </Link>
         </li>
         <li>
-          <Link to="/bonus">
+          <Link to="bonus">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Bonus Details</span>
           </Link>
         </li>
@@ -150,7 +150,7 @@ const Sidebar = () => {
       </a>
       <ul id="icons-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <Link to="/report">
+          <Link to="report">
             <i class="bi bi-chevron-right" style={{fontSize:"14px"}}/><span>Reports</span>
           </Link>
         </li>

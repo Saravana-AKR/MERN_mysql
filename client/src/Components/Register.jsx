@@ -1,25 +1,49 @@
-import React from 'react';
-import FormRow from './FormRow';
-import { Form, redirect, useNavigation, Link } from 'react-router-dom';
+// import axios from 'axios';
+import React, { useState } from 'react';
+import customFetch from '../utils/customFetch';
+import {  Link,useNavigate, } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-export const action = async ({ request }) => {
-	const formData = await request.formData();
-	const data = Object.fromEntries(formData);
-  console.log(data);
-	try {
-		await customFetch.post('/register', data);
-		toast.success('Registration successful');
-		return redirect('/login');
-	} catch (error) {
-		toast.error(error?.response?.data?.msg || 'Registration failed');
-		return error;
-	}
-};
 
 const Register = () => {
-	const navigation = useNavigation();
-	const isSubmitting = navigation.state === 'submitting';
+
+	const navigate = useNavigate();
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		password: '',
+	});
+
+	const handleChange = (e) => {
+		const value = e.target.value;
+		setFormData({
+			...formData,
+			[e.target.name]: value
+		});
+	};
+
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		const userData = {
+			name: formData.name,
+			email: formData.email,
+			password: formData.password,
+		};
+
+		
+		try {
+			const response = await customFetch.post('/register', userData);
+			console.log(response);
+			toast.success('Registration successful');
+			navigate("/login");
+			
+		} catch (error) {
+			toast.error(error?.response?.data?.error || 'Registration failed');
+			console.log(error);
+			
+		}
+	};
 
 	return (
 		<>
@@ -54,33 +78,64 @@ const Register = () => {
 													{/* <p className="text-center small">Enter your personal details to create account</p> */}
 												</div>
 
-												<Form
-													method='post'
-                          preventScrollReset={true}
+												<form
+													// method='post'
+													onSubmit={handleSubmit}
+													//   preventScrollReset={true}
 												>
 													<div className='row g-3 '>
 														<div className='col-12'>
-															<FormRow
+															<label
+																htmlFor='name'
+																className='form-label'
+															>
+																Name
+															</label>
+															<input
 																type='text'
-																name='Name'
+																id='name'
+																name='name'
+																className='form-control'
+																value={formData.name}
+																required
+																onChange={handleChange}
 															/>
-													
 														</div>
 
 														<div className='col-12'>
-															<FormRow
+															<label
+																htmlFor='email'
+																className='form-label'
+															>
+																Email
+															</label>
+															<input
 																type='email'
-																name='Email'
+																id='email'
+																name='email'
+																className='form-control'
+																value={formData.email}
+																required
+																onChange={handleChange}
 															/>
-														
 														</div>
 
 														<div className='col-12'>
-															<FormRow
+															<label
+																htmlFor='password'
+																className='form-label'
+															>
+																Password
+															</label>
+															<input
 																type='password'
-																name='Password'
+																id='password'
+																name='password'
+																className='form-control'
+																value={formData.password}
+																required
+																onChange={handleChange}
 															/>
-															
 														</div>
 
 														{/* <div className='col-12'>
@@ -116,16 +171,17 @@ const Register = () => {
 															<button
 																className='btn btn-primary w-100'
 																type='submit'
-																disabled={isSubmitting}
+																// disabled={isSubmitting}
 															>
-																{isSubmitting
+																{/* {isSubmitting
 																	? 'Creating Account...'
-																	: 'Submit'}
+																	: 'Submit'} */}
+																Submit
 															</button>
 														</div>
 														<div className='col-12'>
 															<p className='small mb-0'>
-																Already have an account?{' '}
+																Already have an account?
 																<Link
 																	to='/login'
 																	className=' text-primary p-2 ms-2'
@@ -135,7 +191,7 @@ const Register = () => {
 															</p>
 														</div>
 													</div>
-												</Form>
+												</form>
 											</div>
 										</div>
 									</div>

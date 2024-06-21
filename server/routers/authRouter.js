@@ -9,10 +9,10 @@ import {
     logout
 } from '../controllers/authController.js'
 
-import {validateRegisterInput} from '../middleware/validationMiddleware.js'
 
 
-router.post('/api/crm/register',validateRegisterInput,register);
+
+router.post('/api/crm/register',register);
 router.post('/api/crm/login',loginUser);
 router.get('/api/crm/register',getAllRegister);
 router.get('/logout',logout);

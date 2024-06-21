@@ -1,6 +1,5 @@
-import React from 'react'
-import FormRow from './FormRow'
-import { Link, Form, redirect, useNavigation } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Link,useNavigate } from 'react-router-dom';
 import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
 
@@ -8,27 +7,47 @@ import { toast } from 'react-toastify';
    
 
 
-        export const action = async ({ request }) => {
-          const formData = await request.formData();
-          const data = Object.fromEntries(formData);
-          console.log(data);
-          try {
-            await customFetch.post('/login', data);
-            toast.success('Login successful');
-            return redirect('/');
-          } catch (error) {
-            toast.error(error?.response?.data?.msg || 'Login failed');
-            return error;
-          }
-        };
 
 
 
 const Login = () => {
 
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting'; 
+  const navigate = useNavigate();
+  
+  const [formData, setFormData] = useState({
+		email: '',
+		password: '',
+	});
 
+	const handleChange = (e) => {
+		const value = e.target.value;
+		setFormData({
+			...formData,
+			[e.target.name]: value
+		});
+	};
+
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		const userData = {
+			email: formData.email,
+			password: formData.password,
+		};
+
+		
+		try {
+			const response = await customFetch.post('/login', userData);
+			console.log(response);
+			toast.success('login successful');
+			navigate("/portal");
+			
+		} catch (error) {
+			toast.error(error?.response?.data?.error || 'login failed');
+			console.log(error);
+			
+		}
+	};
 
   return (
     <>
@@ -59,17 +78,43 @@ const Login = () => {
                     {/* <p className="text-center small">Enter your username & password to login</p> */}
                   </div>
                           
-                  <Form method='post'>
+                  <form onSubmit={handleSubmit}>
                      <div className="row g-3 ">
 
                         <div className="col-12">
-                          <FormRow type='text' name='Name' defaultValue='sara@gmail.com' />
-                          <div className="invalid-feedback">Please enter your username.</div>
+                        <label
+																htmlFor='email'
+																className='form-label'
+															>
+																Email
+															</label>
+															<input
+																type='email'
+																id='email'
+																name='email'
+																className='form-control'
+																value={formData.email}
+																required
+																onChange={handleChange}
+															/>
                         </div>
 
                         <div className="col-12">
-                          <FormRow type='password' name='Password' defaultValue='sara123' />
-                          <div className="invalid-feedback">Please enter your password!</div>
+                        <label
+																htmlFor='password'
+																className='form-label'
+															>
+																Password
+															</label>
+															<input
+																type='password'
+																id='password'
+																name='password'
+																className='form-control'
+																value={formData.password}
+																required
+																onChange={handleChange}
+															/>
                         </div>
 
                         {/* <div className="col-12">
@@ -85,7 +130,7 @@ const Login = () => {
                           <p className="small mb-0">Don't have account? <Link to='/register' className=' text-primary p-2 ms-2'> Register </Link></p>
                         </div>
                      </div>
-                  </Form>
+                  </form>
 
                  
 

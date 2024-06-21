@@ -1,6 +1,8 @@
 import React from 'react';
 
-const FormRow = ({ type, name, labelText, defaultValue = '' }) => {
+const FormRow = ({ type, name, labelText, defaultValue = '',}) => {
+	   const word  = name;
+	   const labelName = word.charAt(0).toUpperCase()+word.slice(1)
 	return (
 		<>
 		
@@ -8,7 +10,7 @@ const FormRow = ({ type, name, labelText, defaultValue = '' }) => {
 					htmlFor={name}
 					className='form-label'
 				>
-					{labelText || name}
+					{labelText || labelName}
 				</label>
 				<input
 					type={type}

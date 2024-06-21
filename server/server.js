@@ -1,12 +1,10 @@
-
+import * as dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
 const app = express();
 import morgan from 'morgan';
-import * as dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 app.use(cookieParser());
-dotenv.config();
-
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
@@ -14,6 +12,9 @@ app.use(express.urlencoded({ extended: false }));
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
   }
+
+
+
 
   const port = process.env.PORT || 5100;
   

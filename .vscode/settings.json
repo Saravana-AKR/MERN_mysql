@@ -3,6 +3,7 @@
         "Aadhar",
         "companyunit",
         "DATEONLY",
-        "empregistration"
+        "empregistration",
+        "IFNULL"
     ]
 }

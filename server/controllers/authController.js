@@ -7,7 +7,7 @@ import { createJWT } from '../utils/tokenUtils.js';
 
 // Create Admin or User
 export const register = async (req, res) => {
-    const { name, email, password, role  } = req.body; // role default to 'user' if not provided
+    const { name, email, password,role  } = req.body; // role default to 'user' if not provided
 
      // Check if all required fields are provided
     if (!name || !email || !password) {
@@ -16,22 +16,23 @@ export const register = async (req, res) => {
 
     try {
         const hashedPassword = await hashPassword(password);
+
+        const userRole = role || 'user';
         
       const query = `
         INSERT INTO register (name, email, password, role) 
         VALUES (?, ?, ?, ?)
       `;
-      const [response] = await connection.query(query, [name, email, hashedPassword,  role]);
+      const [response] = await connection.query(query, [name, email, hashedPassword, userRole]);
       
        // Assuming `response.insertId` is the ID of the newly created user
     const userId = response.insertId;
+    console.log(userId);
     
     // Create JWT token
-    const token = createJWT({ userId, role });
+    const token = createJWT({ userId });
     console.log(token);
        
-    
-
       res.status(200).json({ message: 'User registered successfully', response });
     } catch (error) {
         console.log(error);
@@ -70,27 +71,32 @@ export const loginUser = async (req, res) => {
         const user = rows[0];
         const isPasswordValid = await comparePassword(password, user.password);
           
-        // const oneDay = 1000 * 60 * 60 * 24;
+       
+        
+           if (!isPasswordValid) throw new Error({message:'Invalid Credentials'});
+
+           const  token = createJWT({ userId: user.insertId});
+            const oneDay = 1000 * 60 * 60 * 24;
 
         // res.cookie('token', token, {
         //   httpOnly: true,
         //   expires: new Date(Date.now() + oneDay),
         //   secure: process.env.NODE_ENV === 'production',
         // });
-        
 
-        if (isPasswordValid) {
-          res.status(200).json({ message: 'Login successful', user });
-        } else {
-          res.status(401).json({ error: 'Invalid email or password' });
-        }
-      } else {
+       res.status(200).json({ message: 'Login successful' });
+    //   if (isPasswordValid) {
+    //      res.status(200).json({ message: 'Login successful', user });
+    //   } else {
+    // //       res.status(401).json({ error: 'Invalid email or password' });
+    //     }
+     } else {
         res.status(401).json({ error: 'Invalid email or password' });
-      }
-    } catch (error) {
+     }
+     } catch (error) {
       console.log(error);
       res.status(500).json({ error: 'Failed to login user' });
-    }
+     }
   };
 
 
@@ -101,5 +107,5 @@ export const loginUser = async (req, res) => {
       httpOnly: true,
       expires: new Date(Date.now()),
     });
-    res.status(StatusCodes.OK).json({ msg: 'user logged out!' });
+    res.status(200).json({ msg: 'user logged out!' });
   };

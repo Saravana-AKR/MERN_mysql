@@ -1293,7 +1293,82 @@ h6 {
               }
              }
              
+             /* **************************************************** */
 
+             /* Landing page css  */
 
+             .landing-nav {
+              width: 90vw;
+              max-width: 1020px;
+              margin: 0 auto;
+              height: 12rem;
+              display: flex;
+            
+              align-items: center;
+            }
+            .container {
+              width: 90vw;
+              max-width: 1120px;
+              margin: 0 auto;
+            }
+
+            .landing-logo{
+              padding: 40px 0px !important;
+            }
+
+            .landing-img {
+              width: 100%;
+              display: block;
+              object-fit: cover;
+            }
+            .page {
+              min-height: calc(100vh - var(6rem));
+              display: grid;
+              align-items: center;
+              margin-top: -3rem;
+            }
+            .landing-h1 {
+              font-weight: 700;
+              span {
+                color: #6a2cbc;
+              }
+              margin-bottom: 1.5rem;
+            }
+            .landing-p {
+              line-height: 2;
+              color: #64748b;
+              margin-bottom: 1.5rem;
+              max-width: 35em;
+            }
+            .register-link {
+              margin-right: 1rem;
+            }
+            .main-img {
+              display: none;
+            }
+            .btn {
+              padding: 0.75rem 1rem;
+            }
+            @media (min-width: 992px) {
+              .page {
+                grid-template-columns: 1fr 400px;
+                column-gap: 3rem;
+              }
+              .main-img {
+                display: block;
+              }
+             
+            }
+
+            @media (max-width: 540px) {
+
+            
+               .landing-btn{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+               }
+            }
 
             

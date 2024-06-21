@@ -1,7 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
+
 const Company = () => {
+
+ 
+
+
+
   return (
     <>
      <main id="main" class="main" style={{height:"85vh"}}>
@@ -23,8 +30,10 @@ const Company = () => {
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Company</h5>
-
+              <div>
+				              hello
         
+			</div>
              
 
             </div>

@@ -1,6 +1,8 @@
 
 
 
+ export {default as HomeLayout} from '../../Components/HomeLayout'
+ export {default as Landing} from '../../Components/Landing';
  export {default as Portal} from '../../Components/Portal';
  export {default as Main} from '../../Components/Main';
  export {default as Login} from '../../Components/Login';
