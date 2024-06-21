@@ -8,7 +8,7 @@ const Sidebar = () => {
   <aside id="sidebar" className="sidebar">
   <ul className="sidebar-nav" id="sidebar-nav">
     <li className="nav-item my-4">
-      <Link className="nav-link " to="/">
+      <Link className="nav-link " to="/portal">
         <i className="bi bi-grid-fill" />
         <span>Dashboard</span>
       </Link>
