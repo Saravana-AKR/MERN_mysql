@@ -28,7 +28,9 @@ import {
 	WeeklyAttendance,
 	Bonus,
 	MonthlySalary,
-	Reports
+	Reports,
+	AddCompanyUnit
+	
 } from './ComponentPages/Pages';
 
 
@@ -76,6 +78,12 @@ const router = createBrowserRouter([
 					{
 						path: 'company',
 						element: <Company />,
+						children:[
+							{
+								path:'addCompanyUnit',
+								element:<AddCompanyUnit/>,
+							}
+						]
 					},
 					{
 						path: 'department',
@@ -129,6 +137,7 @@ const router = createBrowserRouter([
 						path: 'settlement',
 						element: <Settlement />,
 					},
+					
 				]
 			},
 		],

@@ -4,11 +4,11 @@ import connection from '../config/db.js';
 // Create Company Unit
 
 export const createCompanyUnit = async(req,res)=>{
-    const {companyName,address,role}  = req.body
+    const {CmpId,UnitName, Dno_Street, Nagar, Village, Taluk, District, State, Pin_code, Delflag}  = req.body
     try {
          const response = await connection.query(
-            'INSERT INTO companyunit (companyName,address,role) VALUES (?,?,?)',
-            [companyName,address,role]
+            'INSERT INTO companyunit (CmpId,UnitName, Dno_Street, Nagar, Village, Taluk, District, State, Pin_code, Delflag) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)',
+            [CmpId,UnitName, Dno_Street, Nagar, Village, Taluk, District, State, Pin_code, Delflag]
         );
          res.status(200).json({message: `companyUnit created successfully`,response});
     } catch (error) {
@@ -52,11 +52,11 @@ export const getCompanyUnit = async(req,res)=>{
  
 export const updateCompanyUnit = async(req,res)=>{
     const { id } = req.params;
-    const { companyName,address,role } = req.body;
+    const {CmpId, UnitName, Dno_Street, Nagar, Village, Taluk, District, State, Pin_code, Delflag } = req.body;
     try {
       const response = await connection.query(
-        'UPDATE companyunit SET companyName = ?, address = ?, role = ? WHERE id = ?',
-        [companyName,address,role, id]
+        'UPDATE companyunit SET CmpId = ?, UnitName = ?, Dno_Street = ?, Nagar = ?, Village = ?, Taluk = ?, District = ?, State = ?, Pin_code = ?, Delflag = ? WHERE id = ?',
+        [CmpId,UnitName, Dno_Street, Nagar, Village, Taluk, District, State, Pin_code, Delflag, id]
       );
       res.status(200).json({ message: 'companyunit updated successfully', response });
     } catch (error) {

@@ -29,4 +29,5 @@
  export {default as MonthlySalary} from '../../ComponentPages/Salary/MonthlySalary';
  export {default as Reports} from '../../ComponentPages/Reports/Reports';
  export {default as Error} from '../../Components/Error';
+ export {default as AddCompanyUnit} from '../../ComponentPages/Master/Company/AddCompanyUnit'
 

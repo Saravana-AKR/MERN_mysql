@@ -33,23 +33,104 @@
        
 
       
-CREATE TABLE register (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE,
-  password VARCHAR(255) NOT NULL,
-  role VARCHAR(10) DEFAULT 'user',
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+        CREATE TABLE register (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          name VARCHAR(255) NOT NULL,
+          email VARCHAR(255) NOT NULL UNIQUE,
+          password VARCHAR(255) NOT NULL,
+          role VARCHAR(10) DEFAULT 'user',
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
 
 
-     CREATE TABLE companyUnit (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      companyName VARCHAR(255) NOT NULL,
-      address VARCHAR(255) NOT NULL ,
-      role VARCHAR(255) NOT NULL,
-     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
+    
 
 
      delete from crmdatabase.register where id=2;
+
+
+     ********************************************************
+
+     Company Query :  
+
+            CREATE TABLE companyunit (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        Cmpid VARCHAR(100) NOT Null,
+        UnitName VARCHAR(255) NOT NULL,
+        Dno_Street VARCHAR(255) NOT NULL,
+        Nagar VARCHAR(255) NOT NULL,
+        Village VARCHAR(255) NOT NULL,
+        Taluk VARCHAR(255) NOT NULL,
+        District VARCHAR(255) NOT NULL,
+        State VARCHAR(255) NOT NULL,
+        Pin_code VARCHAR(10) NOT NULL,
+        Delflag VARCHAR(255) NOT NULL
+      );
+
+
+
+       {
+        "id": 1,
+        "cmpid": "U3Emb",
+        "UnitName": "Fresco NY Private Limited",
+        "Dno_Street": "520,PUDHUR PIRIVU",
+        "Nagar": "Mummoorthy Nagar",
+        "Village": "DHARAPURAM ROAD,",
+        "Taluk": "Tirupur",
+        "District": "Tirupur",
+        "State": "TamilNadu",
+        "Pin_code": "641605",
+        "delflag": "1"
+    },
+    {
+        "id": 2,
+        "cmpid": "Canteen",
+        "UnitName": "AKR Industries Pvt.Ltd Canteen",
+        "Dno_Street": "2/385G  ",
+        "Nagar": "Mummoorthy Nagar",
+        "Village": "PN Road ",
+        "Taluk": "Tirupur",
+        "District": "Tirupur",
+        "State": "TamilNadu",
+        "Pin_code": "641602",
+        "delflag": "1"
+    },
+    {
+        "id": 3,
+        "cmpid": "UR",
+        "UnitName": "UrGear",
+        "Dno_Street": "S.F. No.2/385-G, ",
+        "Nagar": "Mummoorthy Nagar",
+        "Village": "PN Road ",
+        "Taluk": "Tirupur",
+        "District": "Tirupur",
+        "State": "TamilNadu",
+        "Pin_code": "641602",
+        "delflag": "0"
+    },
+    {
+        "id": 4,
+        "cmpid": "Fresco-BLR",
+        "UnitName": "Fresco NY Private Limited-BLR",
+        "Dno_Street": "",
+        "Nagar": "",
+        "Village": "",
+        "Taluk": "",
+        "District": "",
+        "State": "karnataka",
+        "Pin_code": "",
+        "delflag": "1"
+    },
+    {
+        "id": 5,
+        "cmpid": "Mg-1",
+        "UnitName": "Management",
+        "Dno_Street": "S.F. No.2/385-G,",
+        "Nagar": "Mummoorthy  Nagar,",
+        "Village": " P.N. Road, ",
+        "Taluk": "Tirupur",
+        "District": "Tirupur",
+        "State": "Tamilnadu",
+        "Pin_code": "641 602",
+        "delflag": ""
+    }

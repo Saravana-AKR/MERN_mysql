@@ -1,14 +1,13 @@
 import React from 'react'
 import { Form, Link } from 'react-router-dom'
-import customFetch from '../../utils/customFetch'; 
+// import customFetch from '../../utils/customFetch'; 
 
 
 
 // const data = await customFetch.get('/test');
 // console.log(data);
 
-   const data = await customFetch.get('/register');
-   console.log(data);
+  
 
 
 const UserRights = () => {
