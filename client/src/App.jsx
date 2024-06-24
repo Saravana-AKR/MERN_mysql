@@ -33,6 +33,8 @@ import {
 	
 } from './ComponentPages/Pages';
 
+import { action as addCompany } from './ComponentPages/Master/Company/AddCompanyUnit';
+
 
 
 
@@ -78,12 +80,13 @@ const router = createBrowserRouter([
 					{
 						path: 'company',
 						element: <Company />,
-						children:[
-							{
-								path:'addCompanyUnit',
-								element:<AddCompanyUnit/>,
-							}
-						]
+						
+					},
+					{
+                       path : 'addCompanyUnit',
+					   element: <AddCompanyUnit/>,
+					   action:addCompany
+
 					},
 					{
 						path: 'department',

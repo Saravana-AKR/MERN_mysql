@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
 import customFetch from '../../utils/customFetch';
 
@@ -107,6 +107,8 @@ import customFetch from '../../utils/customFetch';
 
 const Company = () => {
 
+  const navigate = useNavigate();
+
   const [companyApi,setCompanyApi] = useState([]);
 
   const [searchCompanyTerm, setSearchCompanyTerm] = useState('');
@@ -210,7 +212,7 @@ const Company = () => {
             <a className='grid-view btn btn-link active mx-2' href="#"> <i className="bi bi-grid-3x3-gap-fill"></i></a>
             <a className='grid-view btn btn-link active mx-2' href="#"> <i className="bi bi-justify fs-5"></i></a>
         
-            <Link className='btn btn-primary' to='addCompanyUnit'> <i className="bi bi-person-plus-fill pe-2" ></i>Add Unit</Link>
+            <button className='btn btn-primary' onClick={()=>navigate('/portal/addCompanyUnit')}> <i className="bi bi-person-plus-fill pe-2" ></i>Add Unit</button>
           
         </div>
       
@@ -226,7 +228,7 @@ const Company = () => {
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Company Unit Details</h5>
-              <div className="row">
+              <div className="row justify-content-center">
                <div className="col-md-12">
                  <div className="table-responsive">
                   <table className="table table-striped table-hover">
