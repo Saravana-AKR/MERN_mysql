@@ -38,7 +38,7 @@ const Login = () => {
 		
 		try {
 			const response = await customFetch.post('/login', userData);
-			console.log(response);
+			// console.log(response);
 			toast.success('login successful');
 			navigate("/portal");
 			

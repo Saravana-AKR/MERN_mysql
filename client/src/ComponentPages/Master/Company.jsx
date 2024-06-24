@@ -171,8 +171,8 @@ const Company = () => {
     const fetchData = async()=>{
            try {
             const response = await customFetch.get('/companyunit');
-            // console.log('Full API response:', response);
-            // console.log('API response data:', response.data);
+            console.log('Full API response:', response);
+            console.log('API response data:', response.data);
             const sortedApiData = sortedData(response.data); // Sort the data initially
              setCompanyApi(sortedApiData);
            } catch (error) {
@@ -234,7 +234,7 @@ const Company = () => {
                   <table className="table table-striped table-hover">
                     <thead>
                       <tr>
-                        
+                       {/* <th scope="col" rowSpan="2" className='text-center'> Id</th> */}
                         <th scope="col" rowSpan="2" className='text-center' onClick={() => handleSort('CmpId')}> CmpId</th>
                         <th scope="col" className='text-center' onClick={() => handleSort('UnitName')} >UnitName</th>
                         <th scope="col" className=' text-center d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('Dno_Street')}>Dno_Street</th>
@@ -279,8 +279,8 @@ const Company = () => {
                                           </Dropdown.Toggle>
     
                                        <Dropdown.Menu className="dropdown-menu dropdown-menu-end">
-                                       <Dropdown.Item href="#/action-1"> <i className="bi bi-pencil-fill text-info"/> Edit</Dropdown.Item>
-                                       <Dropdown.Item href="#/action-2"> <i className="bi bi-trash-fill text-danger"/> Delete</Dropdown.Item>
+                                       <Dropdown.Item onClick={()=>navigate(`/portal/editCompanyUnit/${value.id}`)}> <i className="bi bi-pencil-fill text-info"/> Edit</Dropdown.Item>
+                                       <Dropdown.Item onClick={()=>navigate('/')}> <i className="bi bi-trash-fill text-danger"/> Delete</Dropdown.Item>
                                     
                                      </Dropdown.Menu>
                                   </Dropdown>

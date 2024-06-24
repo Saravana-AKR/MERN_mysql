@@ -2,34 +2,45 @@ import React from 'react'
 import { Form, Link, redirect, useNavigate, useNavigation } from 'react-router-dom'
 import FormRow from '../../../Components/FormRow';
 import customFetch from '../../../utils/customFetch';
+import { useParams } from "react-router-dom";
 
 
 
-export const action = async ({request})=>{
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
-  try {
-    await customFetch.post(`/companyunit`, data);
-    console.log('Form data:', data);
-    return redirect('/portal/company');
-  } catch (error) {
-    console.error('Error submitting form:', error);
-    return error;
+
+export const action = async ({ request }) => {
+    
+    const formData = await request.formData();
+    const data = Object.fromEntries(formData);
+    const { id } = data;
+    // console.log(data);
+    // console.log(data.id);
+    try {
+      await customFetch.patch(`/companyunit/${ id }`, data); // Assuming the `id` is part of the form data
+      console.log('Form data:', data);
+      return redirect('/portal/company');
+    } catch (error) {
+      console.error('Error updating form:', error);
+      return error;
+    }
   }
-}
 
 
 
 
-const AddCompanyUnit = () => {
+const EditCompanyUnit = () => {
 
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+    const { id } = useParams();
+    console.log(useParams());
 
+   
+
+    const navigation = useNavigation();
+    const isSubmitting = navigation.state === 'submitting';
+    console.log('editCompanyUnit:',id );
   return (
     <>
-    
-    <main id="main" class="main" style={{height:"85vh"}}>
+     
+     <main id="main" class="main" style={{height:"85vh"}}>
 
 <div className="pagetitle">
  <h1>Company Unit</h1>
@@ -37,7 +48,7 @@ const AddCompanyUnit = () => {
    <div className="col">
    <ol className="breadcrumb py-3">
      <li className="breadcrumb-item"><Link to='/portal/company'>CompanyUnit</Link></li>
-     <li className="breadcrumb-item active">AddCompanyUnit</li>
+     <li className="breadcrumb-item active">EditCompanyUnit</li>
    </ol> 
    </div>
    
@@ -54,11 +65,14 @@ const AddCompanyUnit = () => {
           <div className="col-md-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Create Company Unit </h5>
+              <h5 class="card-title">Edit Company Unit</h5>
 
               <Form method='post' className="row g-3">
               
                 <div class="col-md-12">
+                <input type="hidden" name="id" value={id} />
+            
+                 {/* Hidden field for ID */}
                 <FormRow type='text' name='CmpId'  />
                 </div>
                 <div class="col-md-12">
@@ -99,7 +113,7 @@ const AddCompanyUnit = () => {
              
           </div>
          </div>
-      
+    
 
   
    </div>
@@ -109,11 +123,8 @@ const AddCompanyUnit = () => {
 
 </main>
     
-  
-    
-    
     </>
   )
 }
 
-export default AddCompanyUnit
+export default EditCompanyUnit

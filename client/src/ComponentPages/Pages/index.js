@@ -30,4 +30,5 @@
  export {default as Reports} from '../../ComponentPages/Reports/Reports';
  export {default as Error} from '../../Components/Error';
  export {default as AddCompanyUnit} from '../../ComponentPages/Master/Company/AddCompanyUnit'
+ export {default as EditCompanyUnit} from '../../ComponentPages/Master/Company/EditCompanyUnit'
 

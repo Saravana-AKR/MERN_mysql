@@ -29,11 +29,13 @@ import {
 	Bonus,
 	MonthlySalary,
 	Reports,
-	AddCompanyUnit
+	AddCompanyUnit,
+	EditCompanyUnit
 	
 } from './ComponentPages/Pages';
 
 import { action as addCompany } from './ComponentPages/Master/Company/AddCompanyUnit';
+import { action as EditCompany } from './ComponentPages/Master/Company/EditCompanyUnit';
 
 
 
@@ -87,6 +89,11 @@ const router = createBrowserRouter([
 					   element: <AddCompanyUnit/>,
 					   action:addCompany
 
+					},
+					{
+                        path: 'editCompanyUnit/:id',
+						element:<EditCompanyUnit/>,
+						action:EditCompany 
 					},
 					{
 						path: 'department',
