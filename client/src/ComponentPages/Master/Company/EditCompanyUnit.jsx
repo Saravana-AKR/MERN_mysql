@@ -30,13 +30,13 @@ export const action = async ({ request }) => {
 const EditCompanyUnit = () => {
 
     const { id } = useParams();
-    console.log(useParams());
+    // console.log(useParams());
 
    
 
     const navigation = useNavigation();
     const isSubmitting = navigation.state === 'submitting';
-    console.log('editCompanyUnit:',id );
+    
   return (
     <>
      

@@ -10,7 +10,7 @@ export const action = async ({request})=>{
   const data = Object.fromEntries(formData);
   try {
     await customFetch.post(`/companyunit`, data);
-    console.log('Form data:', data);
+    // console.log('Form data:', data);
     return redirect('/portal/company');
   } catch (error) {
     console.error('Error submitting form:', error);
