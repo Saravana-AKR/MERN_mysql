@@ -19,8 +19,10 @@ if (process.env.NODE_ENV === 'development') {
   const port = process.env.PORT || 5100;
   
   import employeeRouter from './routers/EmployeeRouter.js';
-  import authRouter   from  './routers/authRouter.js'
-  import  companyUnitRouter from  './routers/companyUnitRouter.js'
+  import authRouter   from  './routers/authRouter.js';
+  import  companyUnitRouter from  './routers/companyUnitRouter.js';
+  import  StatesRouter from './routers/StatesRouter.js';
+  import  DistrictRouter from './routers/DistrictRouter.js';
 
 
 //   app.use('/api/crm/employees',employeeRouter);
@@ -62,6 +64,8 @@ app.use((err, req, res, next) => {
 app.use('/',employeeRouter);
 app.use('/',authRouter);
 app.use('/',companyUnitRouter);
+app.use('/',StatesRouter);
+app.use('/',DistrictRouter);
 
 
 

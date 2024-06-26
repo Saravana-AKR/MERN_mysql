@@ -3,6 +3,14 @@ const router = express.Router();
 
 
 
+import {
+    createStates,
+    getAllStates,
+    getStates,
+    updateStates,
+    deleteStates
+       }
+    from '../controllers/StatesController.js';
 
 
 
@@ -10,9 +18,10 @@ const router = express.Router();
 
 
 
+router.get('/api/crm/states', getAllStates);
+router.post('/api/crm/states', createStates);
+router.get('/api/crm/states/:id', getStates);
+router.patch('/api/crm/states/:id', updateStates);
+router.delete('/api/crm/states/:id', deleteStates);
 
-router.get('/api/crm/companyunit', getAllCompanyUnit);
-router.post('/api/crm/companyunit', createCompanyUnit);
-router.get('/api/crm/companyunit/:id', getCompanyUnit);
-router.patch('/api/crm/companyunit/:id', updateCompanyUnit);
-router.delete('/api/crm/companyunit/:id', deleteCompanyUnit);
+export default router;

@@ -16,7 +16,7 @@ export const createStates = async(req,res)=>{
     }
 }
 
-// Read All Company Unit Information
+// Read All States 
 
 export const getAllStates = async(req,res)=>{
     try {
@@ -29,7 +29,7 @@ export const getAllStates = async(req,res)=>{
 }
 
 
-// Read Company Unit Information
+// Read States 
 
 export const getStates = async(req,res)=>{
     const { id } = req.params;
@@ -46,7 +46,7 @@ export const getStates = async(req,res)=>{
   }
 }
 
-// Update Company Unit Information
+// Update States 
  
 export const updateStates = async(req,res)=>{
     const { id } = req.params;
@@ -63,7 +63,7 @@ export const updateStates = async(req,res)=>{
     }
 }
 
-// Delete Company Unit  Information
+// Delete States 
 
 export const deleteStates = async(req,res)=>{
     const { id } = req.params;
@@ -72,9 +72,9 @@ export const deleteStates = async(req,res)=>{
       'DELETE FROM States WHERE id = ?',
       [id]
     );
-    res.status(200).json({ message: 'companyunit deleted successfully', response });
+    res.status(200).json({ message: 'States deleted successfully', response });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: 'Failed to delete companyunit' });
+    res.status(500).json({ error: 'Failed to delete States' });
   }
 }
