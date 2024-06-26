@@ -41,7 +41,34 @@
           role VARCHAR(10) DEFAULT 'user',
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
+   
 
+        CREATE TABLE companyunit (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        Cmpid VARCHAR(100) NOT Null,
+        UnitName VARCHAR(255) NOT NULL,
+        Dno_Street VARCHAR(255) NOT NULL,
+        Nagar VARCHAR(255) NOT NULL,
+        Village VARCHAR(255) NOT NULL,
+        Taluk VARCHAR(255) NOT NULL,
+        District VARCHAR(255) NOT NULL,
+        State VARCHAR(255) NOT NULL,
+        Pin_code VARCHAR(10) NOT NULL,
+        Delflag VARCHAR(255) NOT NULL
+      );
+
+
+        CREATE TABLE states (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL
+        );
+
+        CREATE TABLE districts (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        state_id INT,
+        FOREIGN KEY (state_id) REFERENCES states(id)
+        );
 
     
 

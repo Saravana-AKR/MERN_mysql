@@ -246,7 +246,7 @@ const Company = () => {
                     <thead>
                       <tr>
                        {/* <th scope="col" rowSpan="2" className='text-center'> Id</th> */}
-                        <th scope="col" rowSpan="2" className='text-center' onClick={() => handleSort('CmpId')}> CmpId</th>
+                        <th scope="col" rowSpan="2" className='text-center' onClick={() => handleSort('CmpId')}> CmpCode</th>
                         <th scope="col" className='text-center' onClick={() => handleSort('UnitName')} >UnitName</th>
                         <th scope="col" className=' text-center d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('Dno_Street')}>Dno_Street</th>
                         <th scope="col" className=' text-center d-none d-sm-table-cell d-md-table-cell' onClick={() => handleSort('Nagar')}>Nagar</th>

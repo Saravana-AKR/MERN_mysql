@@ -3,7 +3,7 @@
 
 
          
-         // import { Routes,Route } from "react-router-dom";
+// import { Routes,Route } from "react-router-dom";
 // import { Suspense, lazy } from 'react';
 
 // const  Register = lazy(()=> import('./Components/Register'))

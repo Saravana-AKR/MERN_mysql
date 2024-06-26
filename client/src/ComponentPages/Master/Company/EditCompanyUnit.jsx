@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Link, redirect, useNavigate, useNavigation } from 'react-router-dom'
 import FormRow from '../../../Components/FormRow';
 import customFetch from '../../../utils/customFetch';
 import { useParams } from "react-router-dom";
+import { useEffect } from 'react';
 
 
 
@@ -32,10 +33,29 @@ const EditCompanyUnit = () => {
     const { id } = useParams();
     // console.log(useParams());
 
-   
+     const [formData,setFormData] = useState(null);
 
     const navigation = useNavigation();
     const isSubmitting = navigation.state === 'submitting';
+
+    useEffect(()=>{
+
+      const fetchData = async () => {
+        try {
+          const response = await customFetch.get(`/companyunit/${id}`);
+          // console.log(response.data);
+          setFormData(response.data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+      fetchData();
+
+    },[id]);
+
+    if (!formData) {
+      return <div>Loading...</div>;
+    }
     
   return (
     <>
@@ -73,34 +93,34 @@ const EditCompanyUnit = () => {
                 <input type="hidden" name="id" value={id} />
             
                  {/* Hidden field for ID */}
-                <FormRow type='text' name='CmpId'  />
+                <FormRow type='text' name='CmpId' defaultValue={formData.Cmpid} />
                 </div>
                 <div class="col-md-12">
-                <FormRow type='text' name='UnitName'  />
+                <FormRow type='text' name='UnitName' defaultValue={formData.UnitName} />
                 </div>
                 <div class="col-md-6">
-                <FormRow type='text' name='Dno_Street'  />
+                <FormRow type='text' name='Dno_Street' defaultValue={formData.Dno_Street} />
                 </div>
                 <div class="col-md-6">
-                <FormRow type='text' name='Nagar'  />
+                <FormRow type='text' name='Nagar' defaultValue={formData.Nagar} />
                 </div>
                 <div class="col-md-6">
-                <FormRow type='text' name='Village'  />
+                <FormRow type='text' name='Village' defaultValue={formData.Village} />
                 </div>
                 <div class="col-md-6">
-                <FormRow type='text' name='Taluk'  />
+                <FormRow type='text' name='Taluk' defaultValue={formData.Taluk} />
                 </div>
                 <div class="col-md-4">
-                <FormRow type='text' name='District'  />
+                <FormRow type='text' name='District' defaultValue={formData.District} />
                 </div>
                 <div class="col-md-4">
-                <FormRow type='text' name='State'  />
+                <FormRow type='text' name='State' defaultValue={formData.State} />
                 </div>
                 <div class="col-md-2">
-                <FormRow type='text' name='Pin_code'  />
+                <FormRow type='text' name='Pin_code' defaultValue={formData.Pin_code} />
                 </div>
                 <div class="col-md-2">
-                <FormRow type='text' name='Delflag'  />
+                <FormRow type='text' name='Delflag' defaultValue={formData.Delflag} />
                 </div>
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary me-3" disabled={isSubmitting}>   {isSubmitting ? 'submitting...' : 'submit'}</button>

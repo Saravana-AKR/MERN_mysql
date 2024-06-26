@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Dropdown from 'react-bootstrap/Dropdown';
+import { Link } from 'react-router-dom';
+import brandLogo from '../assets/brand-logo.png';
 
 
 
@@ -23,7 +25,7 @@ const Header = () => {
   <header id="header" className="header fixed-top d-flex align-items-center">
   <div className="d-flex align-items-center justify-content-between">
     <a href="index.html" className="logo d-flex align-items-center">
-      <img src="img/brand-logo.png" alt />
+      <img src={brandLogo} alt = 'profileLogo' />
       <span className="px-3 d-none d-lg-block"></span>
     </a>
     <i className="bi bi-list toggle-sidebar-btn"  style={{ color: '#1990CC' }} 
@@ -85,14 +87,14 @@ const Header = () => {
       </li> */}
            <Dropdown className="nav-item dropdown pe-3">
                   <Dropdown.Toggle className="nav-link nav-profile d-flex align-items-center pe-0" variant='white' id="dropdown-basic">
-                  <img src="img/profile-img/profile-img.jpg" alt="Profile" className="rounded-circle" />
+                  <img src="/img/profile-img/profile-img.jpg" alt="Profile" className="rounded-circle" />
                   <span className="d-none d-md-block  ps-2">Admin</span>
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                       <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
                   
-                      <Dropdown.Item href="#/action-2">Logout </Dropdown.Item>
+                      <Dropdown.Item ><Link to='/'>Logout</Link></Dropdown.Item>
                      
                   </Dropdown.Menu>
              </Dropdown>
