@@ -20,7 +20,7 @@ export const createDistricts = async(req,res)=>{
 
 export const getAllDistricts = async(req,res)=>{
     try {
-        const [rows] = await connection.query('SELECT * FROM District');
+        const [rows] = await connection.query('SELECT * FROM districts');
         res.status(200).json(rows);
       } catch (error) {
         console.log(error);
