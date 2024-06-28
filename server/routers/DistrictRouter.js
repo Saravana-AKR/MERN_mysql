@@ -6,7 +6,8 @@ import {
     getAllDistricts,
     getDistricts,
     updateDistricts,
-    deleteDistricts
+    deleteDistricts,
+    getDistrictsByState
        }
     from '../controllers/DistrictController.js';
 
@@ -16,5 +17,6 @@ import {
     router.get('/api/crm/district/:id', getDistricts);
     router.patch('/api/crm/district/:id', updateDistricts);
     router.delete('/api/crm/district/:id', deleteDistricts);
+    router.get('/api/crm/district/:state_id', getDistrictsByState);
 
 export default router;

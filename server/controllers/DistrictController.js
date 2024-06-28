@@ -80,4 +80,19 @@ export const deleteDistricts = async(req,res)=>{
     }
 }
 
-// 
+// Get Districts by state_id
+
+export const getDistrictsByState = async(req,res)=>{
+  const { id } = req.params;
+try {
+  const [rows] = await connection.query('SELECT * FROM districts WHERE state_id = ?', [id]);
+  if (rows.length > 0) {
+    res.status(200).json(rows[0]);
+  } else {
+    res.status(404).json({ message: 'District not found' });
+  }
+} catch (error) {
+  console.log(error);
+  res.status(500).json({ error: 'Failed to fetch District' });
+}
+}
