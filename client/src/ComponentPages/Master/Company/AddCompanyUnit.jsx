@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Form, Link, redirect, useNavigate, useNavigation } from 'react-router-dom'
 import FormRow from '../../../Components/FormRow';
 import customFetch from '../../../utils/customFetch';
@@ -8,9 +8,11 @@ import customFetch from '../../../utils/customFetch';
 export const action = async ({request})=>{
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
+
+  console.log(data);
   try {
     await customFetch.post(`/companyunit`, data);
-    // console.log('Form data:', data);
+    console.log('Form data:', data);
     return redirect('/portal/company');
   } catch (error) {
     console.error('Error submitting form:', error);
@@ -23,8 +25,93 @@ export const action = async ({request})=>{
 
 const AddCompanyUnit = () => {
 
+   const [stateApi,setStateApi] = useState([]);
+   const [districtApi,setDistrictApi] = useState([]);
+   const [error, setError] = useState(null);
+   const [selectedState, setSelectedState] = useState('');
+   const [selectedDistrict, setSelectedDistrict] = useState('');
+
+
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
+
+  useEffect(() => {
+     
+    const fetchData = async () => {
+      try {
+        const response = await customFetch.get('/states');
+        console.log('Full API response:', response);
+        const data = response?.data;
+        console.log('API response data:', data);
+
+        if (Array.isArray(data)) {
+          setStateApi(data);
+        } else {
+          throw new Error('State data is not an array');
+        }
+      } catch (error) {
+        console.error('Error fetching state data:', error);
+        setStateApi([]);
+        setError(error.message || 'Failed to fetch state data');
+      }
+    };
+    
+    fetchData(); 
+   }, [])
+
+  
+
+   useEffect(() => {
+    if (selectedState) {
+      console.log(selectedState);
+      const fetchDistrictData = async () => {
+        try {
+       
+          
+          const response = await customFetch.get(`/districts/${selectedState}`);
+          console.log('Full API response:', response);
+          const data = response?.data;
+          console.log('API response data:', data);
+
+          if (Array.isArray(data)) {
+            setDistrictApi(data);
+          } else {
+            throw new Error('District data is not an array');
+          }
+        } catch (error) {
+          console.error('Error fetching district data:', error);
+          setDistrictApi([]);
+          setError(error.message || 'Failed to fetch district data');
+        }
+      };
+
+      fetchDistrictData();
+    }
+  }, [selectedState]);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+
+  if (!Array.isArray(stateApi)) {
+    console.error('Expected an array but got:', stateApi);
+    return <div>Error: Data is not an array</div>;
+  }
+   
+   if (!Array.isArray(districtApi)) {
+    console.error('Expected an array but got:', districtApi);
+    return <div>Error: Data is not an array</div>;
+  }
+
+
+  const handleStateChange = (event) => {
+    setSelectedState(event.target.value);
+  };
+  
+  const handleDistrictChange = (event)=>{
+    setSelectedDistrict(event.target.value)
+  };
 
   return (
     <>
@@ -58,29 +145,46 @@ const AddCompanyUnit = () => {
 
               <Form method='post' className="row g-3">
               
-                <div class="col-md-12">
+                <div class="col-md-2">
                 <FormRow type='text' name='CmpId'  />
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-4">
                 <FormRow type='text' name='UnitName'  />
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                 <FormRow type='text' name='Dno_Street'  />
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                 <FormRow type='text' name='Nagar'  />
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                 <FormRow type='text' name='Village'  />
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                 <FormRow type='text' name='Taluk'  />
                 </div>
-                <div class="col-md-4">
-                <FormRow type='text' name='District'  />
+                <div class="col-md-3">
+                  <label htmlFor="district" class="form-label">
+                   District</label>
+                  <select id="district" name='District'  class="form-select" value={selectedDistrict} onChange={handleDistrictChange} >
+                    <option selected>Choose...</option>
+                    {districtApi.map((value,index)=>{
+                      return <option key={index} value={value.id}>
+                         {value.name}
+                      </option>
+                    })}
+                  </select>
                 </div>
-                <div class="col-md-4">
-                <FormRow type='text' name='State'  />
+                <div class="col-md-3">
+                <label htmlFor="state" name='State' class="form-label">State</label>
+                  <select id="State"  class="form-select" value={selectedState} onChange={handleStateChange}>
+                    <option selected>Choose...</option>
+                    {stateApi.map((value,index)=>{
+                      return <option key={index} value={value.id}>
+                         {value.name}
+                      </option>
+                    })}
+                  </select>
                 </div>
                 <div class="col-md-2">
                 <FormRow type='text' name='Pin_code'  />
