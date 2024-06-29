@@ -1372,4 +1372,13 @@ h6 {
             }
 
             
-           
+             /* **************************************************** */
+
+             /* Custom Select css  */
+
+
+             .custom-select{
+              outline: none;
+              border: none;
+              padding: 5px;
+             }

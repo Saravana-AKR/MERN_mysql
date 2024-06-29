@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Form, Link, redirect, useNavigate, useNavigation } from 'react-router-dom'
 import FormRow from '../../../Components/FormRow';
 import customFetch from '../../../utils/customFetch';
+import Data from '../../../utils/pincode.json';
+import CustomSelect from '../../../Components/CustomSelect';
 
 
 
@@ -30,6 +32,10 @@ const AddCompanyUnit = () => {
    const [error, setError] = useState(null);
    const [selectedState, setSelectedState] = useState('');
    const [selectedDistrict, setSelectedDistrict] = useState('');
+
+    let District = 'District';
+    let State =  'State';
+
 
 
   const navigation = useNavigation();
@@ -138,53 +144,61 @@ const AddCompanyUnit = () => {
 
     
          <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-10">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Create Company Unit </h5>
 
               <Form method='post' className="row g-3">
               
-                <div class="col-md-2">
+                <div class="col-md-6">
                 <FormRow type='text' name='CmpId'  />
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                 <FormRow type='text' name='UnitName'  />
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                 <FormRow type='text' name='Dno_Street'  />
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                 <FormRow type='text' name='Nagar'  />
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                 <FormRow type='text' name='Village'  />
                 </div>
                 <div class="col-md-3">
                 <FormRow type='text' name='Taluk'  />
                 </div>
-                <div class="col-md-3">
-                  <label htmlFor="district" class="form-label">
+                <div class="col-md-4">
+    
+                  <label htmlFor="District" class="form-label">
                    District</label>
-                  <select id="district" name='District'  class="form-select" value={selectedDistrict} onChange={handleDistrictChange} >
+                   <CustomSelect  Data={Data} DataValue ={District}/>
+                  {/* <select id="district" name='District'  class="form-select"  >
+                    <optgroup>
                     <option selected>Choose...</option>
-                    {districtApi.map((value,index)=>{
-                      return <option key={index} value={value.id}>
-                         {value.name}
+                    {Data.map((value,index)=>{
+                      return <option key={index} value={value.District}>
+                         {value.District}
                       </option>
                     })}
-                  </select>
+                    </optgroup>
+                  </select> */}
                 </div>
-                <div class="col-md-3">
-                <label htmlFor="state" name='State' class="form-label">State</label>
-                  <select id="State"  class="form-select" value={selectedState} onChange={handleStateChange}>
-                    <option selected>Choose...</option>
+                <div class="col-md-4">
+                <label htmlFor="State"  class="form-label">State</label>
+                <CustomSelect  Data={Data} DataValue ={State}/>
+
+                  {/* <select id="State" name='State' class="form-select">
+                  <optgroup>
+                  <option selected>Choose...</option>
                     {stateApi.map((value,index)=>{
                       return <option key={index} value={value.id}>
                          {value.name}
                       </option>
                     })}
-                  </select>
+                  </optgroup>
+                  </select> */}
                 </div>
                 <div class="col-md-2">
                 <FormRow type='text' name='Pin_code'  />

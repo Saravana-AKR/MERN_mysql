@@ -93,6 +93,20 @@ Regardless of whether you prefer min-, max-, or combinations thereof, be cogniza
 
 
 
+             <div class="col-md-3">
+                <label htmlFor="state" name='State' class="form-label">State</label>
+                  <select id="State"  class="form-select" value={selectedState} onChange={handleStateChange}>
+                    <option selected>Choose...</option>
+                    {stateApi.map((value,index)=>{
+                      return <option key={index} value={value.id}>
+                         {value.name}
+                      </option>
+                    })}
+                  </select>
+                </div>
+
+
+
 
 
 
